@@ -44,7 +44,7 @@ jobs:
             exit 0
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "::set-output name=manager::npm"
-            echo "::set-output name=command::ci"
+            echo "::set-output name=command::install"
             exit 0
           else
             echo "Unable to determine packager manager"
@@ -77,7 +77,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build --prefix-paths
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

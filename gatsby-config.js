@@ -11,6 +11,7 @@ module.exports = {
       twitter: `lingdocs`,
     },
   },
+  pathPrefix: "/blog",
   plugins: [
     `gatsby-plugin-image`,
     {
