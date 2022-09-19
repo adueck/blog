@@ -1,5 +1,5 @@
 ---
-title: How to keep an input in focus when clicking on other non-form elements in React
+title: How to keep an input in focus when clicking on other elements in React
 date: "2022-09-19"
 description: "Sometimes in a React application you want to have an input which is the main focus. You might want the cursor to stay focussed on that input even if you click around on different things..."
 ---
