@@ -10,7 +10,7 @@ Let's say we want to process a string with a function. That's easy.
 
 ```ts
 function changeFavoriteAnimal(s: string): string {
-    return s.replace(/cats/g, "dogs");
+    return s.replace(/cat/g, "dog");
 }
 changeFavoriteAnimal("I like cats");
 // "I like dogs"
@@ -25,7 +25,7 @@ function changeFavoriteAnimal(node: JSX.Element): JSX.Element {
         ...node,
         props: {
             ...node.props,
-            children: node.props.children.replace(/cats/g, "dogs"),
+            children: node.props.children.replace(/cat/g, "dog"),
         },
     };
 }
@@ -153,7 +153,7 @@ Change all the text inside an element:
         Change all the text inside that element (recursion ⤴)
 ```
 
-Now let's write the code for that...
+Now let's write some code for that in TypeScript...
 
 ```tsx
 type Node = React.ReactElement | string | undefined;
@@ -195,5 +195,5 @@ This can be pretty powerful as we can pass any function to modify all the text i
 
 #### Note:
 
-I mentioned earlier that I have **oversimplified things** when talking about JSX elements. In TypeScript the type `JSX.Element` covers [a whole bunch of other things](https://stackoverflow.com/a/58123882/8620945) including component function etc. The code above works if you just have elements with text, but if you have these other types of `JSX.Element` you will need to handle those in the code as well. 
+I mentioned earlier that I have **oversimplified things** when talking about JSX elements. In TypeScript the type `JSX.Element` covers [a bunch of other things](https://stackoverflow.com/a/58123882/8620945) including function components etc. The code above works if you just have elements with text, but if you have these other types of `JSX.Element` you will need to handle those in the code as well. 
 
