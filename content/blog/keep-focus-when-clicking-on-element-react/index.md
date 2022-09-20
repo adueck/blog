@@ -43,7 +43,9 @@ If the user clicked on something that was not an `input` element (or something w
     id="search-bar"
     type="text"
     onBlur={e => {
-        if (!e.relatedTarget) {
+        // only re-focus if the user clicked on something
+        // that was NOT an input element
+        if (e.relatedTarget === null) {
             e.target.focus();
         }
     }}
