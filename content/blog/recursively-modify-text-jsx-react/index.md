@@ -94,7 +94,7 @@ toUpperCaseTS(["a", "cat", ["is", "a", [["cat"], "to"], "me"]]);
 // ["a", "dog", ["is", "a", [["dog"], "to"], "me"]]
 ```
 
-Now we can see how the React/JSX Elements follow a similar definition. (Note: I'm going to [simplify things](https://stackoverflow.com/a/58123882/8620945) for our purposes here.)
+Now we can see how the React/JSX Elements follow a similar definition. (Note: I'm going to really [simplify things](https://stackoverflow.com/a/58123882/8620945) for our purposes here.)
 
 <h5 id="node-definition">A <strong>Node</strong> is one of the following:</h5>
 
@@ -115,11 +115,16 @@ And when we look inside that JSX/React element we have it's children.
 - or an **array of Nodes**
     - ie. `["I like", <span><em>friendly</em> cats</span>, "so much"]`
 
-Notice how, again, these data definitions refer back to each other. An array of elements can contain nodes, which can contain another array of nodes, and so on possibly forever.
+Notice how, again, these data definitions refer back to each other. An array of nodes can contain elements, which can contain another array of nodes, and so on possibly forever.
 
-This means we can use **recursion** to process the data in the same way. 
+This means we can use **recursion** to process the data in the same way. But first, another ridiculous example of recusion... 
 
 ![Recursion Meme](./recursion-meme.jpg)
+
+A **Kid with a bed** has:
+ - nothing under it  
+ - a monster under it  
+ - a kid with a bed under it (recursion ⤴)  
 
 ```
 Look dad, there's a monster!
