@@ -1,7 +1,7 @@
 ---
 title: Using recursion to modify all the text in a React/JSX node
 date: "2022-09-20"
-description: "How can we write a function to modify all the text found inside of a React/JSX node, even when its full of other nodes and texts? This is a good problem to learn about recursion with."
+description: "How can we write a function to modify all the text found inside of a React/JSX node, even when its full of other nodes and texts? This is a good problem to learn about recursion with..."
 ---
 
 How can we write a function to modify all the text found inside of a React/JSX node, even when its full of other nodes and texts? This is a good problem to learn about recursion with.
@@ -60,7 +60,7 @@ If we massively simplify the idea of S-expressions and adapt them to JS/TS, we c
 <h5 id="s-expr-definition">A <strong>"TS-Expression"</strong> is one of the following:</h5>
 
 - a **string**
-- an array of ["TS-Expression"](#s-expr-definition)s
+- an array of ["TS-Expression"](#s-expr-definition)s (recursion ⤴)
 
 We have a type of data that *refers to itself* or is *recursive*. And that means we can make all kinds of crazy, nested structures.
 
@@ -72,7 +72,7 @@ const b: TSExpression = ["a", "cat"];
 const c: TSExpression = ["a", "cat", ["is", "a", [["cat"], "to"], "me"]];
 ```
 
-We have a very simple type definition that can create very complex pieces of data. And because the definition is simple, processing the data is also very simple!
+We have a very simple type definition that can create very complex pieces of data. But because the definition is simple, processing the data is also simple!
 
 ```ts
 function changeAnimalTS(s: TSExpression): TSExpression {
@@ -94,25 +94,25 @@ toUpperCaseTS(["a", "cat", ["is", "a", [["cat"], "to"], "me"]]);
 // ["a", "dog", ["is", "a", [["dog"], "to"], "me"]]
 ```
 
-Now we can see how the React/JSX Nodes follow a similar definition. Again, to simplify things...
+Now we can see how the React/JSX Elements follow a similar definition. (Note: I'm going to [simplify things](https://stackoverflow.com/a/58123882/8620945) for our purposes here.)
 
 <h5 id="node-definition">A <strong>Node</strong> is one of the following:</h5>
 
 - a **string**
     - ie. `"I like cats"`
-- or a **JSX Element**
+- or a **Element**
     - ie. `<div>I like cats</div>`
 
-And when we look inside that JSX element we have it's children.
+And when we look inside that JSX/React element we have it's children.
 
-##### The children of a **JSX Element** is one of the following:
+##### The children of an **Element** is one of the following:
 
 - nothing
-    - ie. `undefined`
-- a **node** (back to the [definition above](#node-definition) 👆)
+    - ie. `undefined` or `null`
+- a **Node** (back to the [definition above](#node-definition) ⤴)
     - ie. `<div>I like cats</div>`
     - or `"I like cats"`
-- or an **array of nodes**
+- or an **array of Nodes**
     - ie. `["I like", <span><em>friendly</em> cats</span>, "so much"]`
 
 Notice how, again, these data definitions refer back to each other. An array of elements can contain nodes, which can contain another array of nodes, and so on possibly forever.
@@ -132,7 +132,7 @@ Look dad, there's a monster!
     if There's nothing there
         Stop
     if There's another kid complaining to his dad about the monster
-        Look dad, there's a monster!
+        Look dad, there's a monster! (recursion ⤴)
 ```
 
 So you can see that this could go on forever until you actually get to see what's under the bed.
@@ -147,10 +147,10 @@ Change all the text inside an element:
     if There's text inside
         Change the text
         Stop
-    if There's an array of elements iside
-        Change all the text inside EACH element
-    There's just one element inside 
-        Change all the text inside that element
+    if There's an array of nodes iside
+        Change all the text inside EACH element (recursion ⤴)
+    if There's just one node inside 
+        Change all the text inside that element (recursion ⤴)
 ```
 
 Now let's write the code for that...
@@ -159,11 +159,11 @@ Now let's write the code for that...
 type Node = React.ReactElement | string | undefined;
 
 function JSXModifyText(e: Node, modifier: (s: string) => string): Node {
-  // a. nothing inside, return and stop
+  // a. it's nothing. return and stop.
   if (!e) {
     return e;
   }
-  // b. text inside, modify, return and stop
+  // b. it's text. modify, return and stop.
   if (typeof e === "string") {
     return modifier(e);
   }
@@ -174,22 +174,26 @@ function JSXModifyText(e: Node, modifier: (s: string) => string): Node {
     props: {
       ...e.props,
       children:
-        // c. There's an array of elements inside -> repeat for each one
+        // c. There's an array of nodes inside -> repeat for each one ⤴
         Array.isArray(e.props.children)
           ? e.props.children.map((x: Node) => JSXModifyText(x, modifier))
-          // d. There's just one element inside -> repeat for it
+          // d. There's just one node inside -> repeat for it ⤴
           : JSXModifyText(e.props.children, modifier),
     }
   };
 }
 ```
 
-This can be pretty powerful as we can pass any function to modify all the text in any tree of nodes. Have a look at what this code sandbox can do.
+This can be pretty powerful as we can pass any function to modify all the text in any tree of nodes. Have a look at what this code sandbox can do. Notice how with that simple function it reaches down and changes all the text, even stuff buried deep in the table, etc.
 
 <iframe src="https://codesandbox.io/embed/jsx-text-transformation-jql4f7?fontsize=14&hidenavigation=1&theme=dark"
-    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    style="width:100%; height:650px; border:0; border-radius: 4px; overflow:hidden;"
     title="jsx-text-transformation"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+#### Note:
+
+I mentioned earlier that I have **oversimplified things** when talking about JSX elements. In TypeScript the type `JSX.Element` covers [a whole bunch of other things](https://stackoverflow.com/a/58123882/8620945) including component function etc. The code above works if you just have elements with text, but if you have these other types of `JSX.Element` you will need to handle those in the code as well. 
 
