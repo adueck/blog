@@ -1,10 +1,10 @@
 ---
-title: Using recursion to modify all the text in a React/JSX node
+title: Using recursion to modify all the text in a React/JSX element
 date: "2022-09-20"
-description: "How can we write a function to modify all the text found inside of a React/JSX node, even when its full of other nodes and texts? This is a good problem to learn about recursion with..."
+description: "How can we write a function to modify all the text found inside of a React/JSX element, even when its full of other nodes and texts? This is a good problem to learn about recursion with..."
 ---
 
-How can we write a function to modify all the text found inside of a React/JSX node, even when its full of other nodes and texts? This is a good problem to learn about recursion with.
+How can we write a function to modify all the text found inside of a React/JSX element, even when its full of other nodes and text? This is a good problem to learn about recursion with.
 
 Let's say we want to process a string with a function. That's easy.
 
@@ -53,7 +53,7 @@ changeFavoriteAnimal(
 
 Now we have a complicated glob of data, and we need to somehow reach down in and modify all the text we can find in it. As we dig in we'll find strings and elements nested inside other elements with strings and so on... The data structures keep repeating themselves, so this looks like a perfect job for **recursion!**
 
-I've recently been working through [How To Design Programs](https://htdp.org), and I've enjoyed learning about how to use recursion to process these kinds of data structures. What we have with the React/JSX nodes are basically [S-expressions](https://htdp.org/2022-8-7/Book/part_four.html#%28part._sec~3asexp%29), so we can process them in the same way. Don't worry if you didn't understand that nerdy LISP term I just used. Allow me to explain.
+I've been working through [How To Design Programs](https://htdp.org), and I've enjoyed learning about how to use recursion to easily process these kinds of data structures. What we have with the React/JSX nodes are basically [S-expressions](https://htdp.org/2022-8-7/Book/part_four.html#%28part._sec~3asexp%29), so we can process them in the same way. Don't worry if you didn't understand that nerdy LISP term I just used. Allow me to explain.
 
 If we massively simplify the idea of S-expressions and adapt them to JS/TS, we could have something like this
 
