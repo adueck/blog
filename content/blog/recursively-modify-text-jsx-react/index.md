@@ -55,7 +55,7 @@ Now we have a complicated glob of data, and we need to somehow reach down in and
 
 I've been working through [How To Design Programs](https://htdp.org), and I've enjoyed learning about how to use recursion to easily process these kinds of data structures. What we have with the React/JSX nodes are basically [S-expressions](https://htdp.org/2022-8-7/Book/part_four.html#%28part._sec~3asexp%29), so we can process them in the same way. Don't worry if you didn't understand that nerdy LISP term I just used. Allow me to explain.
 
-If we massively simplify the idea of S-expressions and adapt them to JS/TS, we could have something like this
+If we massively simplify the idea of S-expressions and adapt them to JS/TS, we could have something like this:
 
 <h5 id="s-expr-definition">A <strong>"TS-Expression"</strong> is one of the following:</h5>
 
