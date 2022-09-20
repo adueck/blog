@@ -4,6 +4,7 @@ module.exports = {
     author: {
       name: `Adam Dueck`,
       summary: `who likes learning about languages human, or digitial.`,
+      website: "https://adueck.github.io",
     },
     description: `A blog about language, software development, and everything in-between`,
     siteUrl: `https://adueck.github.io/blog`,
