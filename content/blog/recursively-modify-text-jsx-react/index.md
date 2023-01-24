@@ -2,6 +2,7 @@
 title: Using recursion to modify all the text in a React/JSX element
 date: "2022-09-20"
 description: "How can we write a function to modify all the text found inside of a React/JSX element, even when its full of other nodes and texts? This is a good problem to learn about recursion with..."
+image: recursion-meme.jpg
 ---
 
 How can we write a function to modify all the text found inside of a React/JSX element, even when its full of other nodes and text? This is a good problem to learn about recursion with.
