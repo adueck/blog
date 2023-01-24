@@ -7,7 +7,7 @@ image: blog-post-banner.jpg
 
 ![Gottlob Frege the zoomer doing JavaScript](blog-post-banner.jpg)
 
-As I've been learning programming I've found it's drawn me back into math, and I am really enjoying seeing the parallels between the formal logic of mathematics and the logic we see in code.
+Programming has drawn me back into math, and I am really enjoying seeing the parallels between the formal logic of mathematics and the logic we see in code.
 
 I've been enjoying working through Sussana S. Epp's fantastic [Discrete Mathematics with Applications](https://www.amazon.com/Discrete-Mathematics-Applications-Susanna-Epp/dp/0495391328) and I am seeing how a lot of the mathematical concepts I'm learning were things that I had already seen or played with in functional programming, using Scheme/Racket and JavaScript/TypeScript.
 
