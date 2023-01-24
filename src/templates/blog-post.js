@@ -94,7 +94,7 @@ export const pageQuery = graphql`
         description
         image {
           childImageSharp {
-            fixed(width: 800, height: 418) {
+            fixed(width: 800, height: 418, cropFocus: CENTER, quality: 80) {
               src
             }
           }

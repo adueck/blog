@@ -33,6 +33,7 @@ const Seo = ({ description, lang, title, children, image }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title;
   const imageUrl = `${site.siteMetadata?.siteUrl}${image?.childImageSharp?.fixed?.src}`
+  console.log({ imageUrl });
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
