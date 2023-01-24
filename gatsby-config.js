@@ -109,6 +109,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            link: "https://adueck.github.io/blog",
             title: "Adam Dueck Blog RSS Feed",
           },
         ],
@@ -119,7 +120,7 @@ module.exports = {
       options: {
         name: `Adam Dueck - Blog`,
         short_name: `Adam's Blog`,
-        start_url: `/`,
+        start_url: `/blog`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
