@@ -36,7 +36,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 1200,
+              quality: 80,
             },
           },
           {
@@ -44,6 +45,13 @@ module.exports = {
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
+          },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
