@@ -8,7 +8,7 @@ date: "2023-02-02"
 
 Especially with SPA (Single-page applications), we can use service workers to **make a totally self-contained, offline-available app**, that people can access offline, whether they're visiting the site again without internet or they've installed it as an app on their phone.
 
-Why would you need this? Well, not everyone has internet access all the time. You might want to make a reference app or some sort of learning tool where people could access all the content even without any internet connection.
+Why would you need this? Well, not everyone has internet access all the time, and you might want to make a reference app or some sort of learning tool where people could access all the content even without any internet connection.
 
 ![no wifi](./no-wifi.jpg)
 
@@ -182,3 +182,56 @@ If you don't want to cache absolutely *everything* (you might have some big audi
 
 There you go! Now you can build your game, educational tool, docs site, or whatever you want and serve it as an installable, totally offline-available app.
 
+## Handling Updates
+
+One of the tricky things about service workers and PWA is how to handle updating the page and letting the user see the latest version of the page, and not just the version they cached on the last visit.
+
+By default, if a visitor is returning to the the page/app, they will see the version that was cached on their last visit. It will only show a new, updated version on the next visit/reload. But we can let them know that there is an update and [prompt them](https://vite-pwa-org.netlify.app/guide/prompt-for-update.html) to reload the page and see the latest version right away.
+
+To do this, we can add a bit of code in `main.tsx`
+
+```tsx
+// /main.tsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+import { registerSW } from "virtual:pwa-register";
+
+// add this to prompt for a refresh
+const updateSW = registerSW({
+  onNeedRefresh() {
+    if (confirm("New content available. Reload?")) {
+      updateSW(true);
+    }
+  },
+});
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
+```
+
+If you're using TypeScript (and I hope you are!) then you'll get an error on:
+
+```
+import { registerSW } from "virtual:pwa-register";
+```
+
+To fix this and let us use the virtual module we need to update `tsconfig.json` to include `"vite-plugin-pwa/client"` in `compilerOptions.types`
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    ...
+    "types": [
+      "vite-plugin-pwa/client"
+    ]
+  },
+}
+```
+
+Now you have a fully-offline app that will prompt the user to update whenever a new version is available.
