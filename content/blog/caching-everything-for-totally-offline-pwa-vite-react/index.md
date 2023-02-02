@@ -147,9 +147,9 @@ export default defineConfig({
                 "display": "standalone",
                 "scope": "/",
                 "start_url": "/",
-                "short_name": "vite test",
-                "description": "testing vite pwa",
-                "name": "vite test",
+                "short_name": "Vite PWA",
+                "description": "Vite PWA Demo",
+                "name": "Vite PWA",
                 "icons": [
                     {
                         "src": "/icon-192x192.png",
@@ -235,3 +235,5 @@ To fix this and let us use the virtual module we need to update `tsconfig.json` 
 ```
 
 Now you have a fully-offline app that will prompt the user to update whenever a new version is available.
+
+You can find the code and a fully-working boilerplate [here on GitHub](https://github.com/adueck/vite-offline-pwa-boilerplate).
