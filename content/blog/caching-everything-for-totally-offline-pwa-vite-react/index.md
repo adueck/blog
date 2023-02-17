@@ -12,7 +12,7 @@ Why would you need this? Well, not everyone has internet access all the time, an
 
 ![no wifi](./no-wifi.jpg)
 
-<p style="font-size: small; text-align: center"><a href="https://www.freepik.com/free-vector/no-connection-concept-illustration_13795572.htm#query=no%20wifi%20signal&position=3&from_view=keyword">Image by storyset</a> on Freepik</p>
+<p style={{ fontSize: "small", textAlign: "center" }}><a href="https://www.freepik.com/free-vector/no-connection-concept-illustration_13795572.htm#query=no%20wifi%20signal&position=3&from_view=keyword">Image by storyset</a> on Freepik</p>
 
 However, when we try to do this we run into a couple of problems:
 

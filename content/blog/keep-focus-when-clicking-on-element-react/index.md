@@ -64,7 +64,7 @@ You could also add your own logic to affect the behaviour depeding on what *type
 This is a bit of an unusual use case, so **use it wisely**. Most of the time you would not want the input to stay this aggressively focussed, especially on mobile.
 
 <iframe src="https://codesandbox.io/embed/fervent-pine-hzxmu0?fontsize=14&hidenavigation=1&theme=dark"
-    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    style={{ width: "100%", height: "500px", border: 0, borderRadius: "4px", overflow: "hidden" }}
     title="react-focus-demo"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; icrophone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"

@@ -20,7 +20,6 @@ changeFavoriteAnimal("I like cats");
 What if we need to modify some text in a React/JSX node? We could just look inside be accessing the text in `props.children`, and modify that:
 
 ```ts
-
 function changeFavoriteAnimal(node: JSX.Element): JSX.Element {
     return {
         ...node,
@@ -193,7 +192,7 @@ function JSXModifyText(e: Node, modifier: (s: string) => string): Node {
 This can be pretty powerful as we can pass any function to modify all the text in any tree of nodes. Have a look at what this code sandbox can do. Notice how with that simple function it reaches down and changes all the text, even stuff buried deep in the table, etc.
 
 <iframe src="https://codesandbox.io/embed/jsx-text-transformation-jql4f7?fontsize=14&hidenavigation=1&theme=dark"
-    style="width:100%; height:650px; border:0; border-radius: 4px; overflow:hidden;"
+    style={{ width: "100%", height: "650px", border: 0, borderRadius: "4px", overflow: "hidden" }}
     title="jsx-text-transformation"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
