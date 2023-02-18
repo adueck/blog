@@ -44,7 +44,7 @@ const IndexPage: React.FC<PageProps<Queries.IndexPageQuery>> = ({
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Adam Dueck - Blog</title>
 
 export const query = graphql`
   query IndexPage {
