@@ -11,7 +11,7 @@ const Layout: React.FC<{
         <nav className="mb-4">
             <div>
                 <Link to="/">
-                    {location.pathname === "/"
+                    {["/", "/blog/"].includes(location.pathname)
                         ? <h1 style={{ marginTop: "3rem", marginBottom: "2rem" }}>Adam Dueck - Blog</h1>
                         : <h4>Adam Dueck - Blog</h4>}
                 </Link>
