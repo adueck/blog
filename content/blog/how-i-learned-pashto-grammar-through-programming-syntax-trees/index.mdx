@@ -1,7 +1,8 @@
 ---
 title: How I learned Pashto grammar through programming syntax trees
 date: "2023-02-10"
-image: syntax-trees.jpg
+image: "./syntax-trees.jpg"
+mainImage: "syntax-trees.jpg"
 ---
 
 import OldVerbExplorer from "./old-verb-explorer/OldVerbExplorer";
@@ -158,9 +159,10 @@ $$
 
 Now we have a smaller tree and we multiply 4 * 2, which ends up being 8
 
-<div style={{ maxWidth: "16rem", margin: "0 auto" }}>
-    <img src={mathSyntaxTree3} />
+<div style={{ maxWidth: "14rem", margin: "0 auto" }}>
+    <img src={mathSyntaxTree3} className="img-fluid" />
 </div>
+
 
 $$
 4 + 8
@@ -177,52 +179,6 @@ $$
 $$
 
 At the end we have a number, and we are done.
-
-### Writing a program to process syntax trees of a programming language
-
-Ok, so *we* know how to evaluate those trees, those expressions in our Lil'MathLang. But how can we teach a computer to evaluate any expression we give it?
-
-#### Step 1: Write a Grammar
-
-First of let's write out a set of definitions of what our little language is. We can call this a **grammar**.
-
-As we saw an expression (or a tree) in our language can either be a **number**, the **sum** of two expressions (+), or the **product** of two expressions (*).
-
-```
-An "expression" (a tree) is one of the following:
- - a number
- - a +
- - a *
-
-+ is the sum of:
-  an expression on the left and
-  an expression on the right
-
-* is the product of:
-  an expression on the left and
-  an expression on the right
-```
-
-<details>
-<summary>We could also write these definitions in TypeScript...</summary>
-
-```ts
-type Expression = number | Sum | Product;
-
-type Sum = {
-    operation: "+",
-    left: Tree,
-    right: Tree,    
-};
-
-type Product = {
-    operation: "*",
-    left: Tree,
-    right: Tree,
-};
-```
-
-</details>
 
 Notice how these definitions refer back to each other and themselves. In other words, they are *recursive*. Because of this you can make these expressions infinitely bigger and bigger. An expression can be a sum of expressions, which are sums and products of expressions, which are products and sums of expressions which are... and so on and so on...
 
@@ -574,7 +530,7 @@ function formParticiple(participle: Participle, inflected: boolean): Formed<Pron
 ```
 </details>
 
-I've left out the instructions for actually inflecting the words for simplicities sake, but you can [read about them here](https://grammar.lingdocs.com/inflection/inflection-patterns/).
+I've left out the instructions for actually inflecting and making the words plural the words for simplicities sake. In Pashto it's actually *very complicated*, but you can [read about how inflections work here](https://grammar.lingdocs.com/inflection/inflection-patterns/).
 
 Writing out these instructions helped me solidify some rules about what happens with NPs in Pashto:
  - adjectives inflect to agree with the nouns they're attached to
@@ -605,7 +561,7 @@ Below is a little playground you can use to create NPs according to the grammar 
 
 ##### NP Playground
 
-<div className="wide-element">
+<div className="">
     <NPBuilder opts={defaultTextOptions} />
 </div>
 
@@ -758,11 +714,11 @@ It was a joy to see that once we get the proper basic blocks of logic, we can gl
 
 **Here's a demo of the phrase building playground that I dreamed of years ago!** You can try looking at the different example sentences and modify them, or build your own from scratch. You can click on the <i className="fas fa-cubes mx-1" /> above the phrases to see their phrase structure. You can also watch [this demo](https://www.youtube.com/watch?v=i3IzRPn4i_w&ab_channel=LingDocs), or [these videos](https://www.youtube.com/playlist?list=PLSvdKFalIo5OD-W63LL8fTQgXxQBgZWAL) for an exploration of various grammar features. 
 
-<div className="wide-element" style={{ marginBottom: "-6rem" }}>
+<div className="" style={{ marginBottom: "-6rem" }}>
     <PhraseBuilder />
 </div>
 
-#### A mathematical model for Pashto phrase generation
+### A mathematical model for Pashto phrase generation
 
 So now we have a mathematical function that takes a syntax tree and outputs a grammatically correct Pashto sentence. To adapt a phrase from [Stephen Wolfram](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/), this is **a mathematical theory of what humans are doing when they speak Pashto**. With this approach to explicitly spelling out the rules in a phrase generating grammar, we have a clear theory that we can fully examine and prove.
 
@@ -774,7 +730,7 @@ So now we have a mathematical function that takes a syntax tree and outputs a gr
 
 Anyone who's tried to ask a native speaker about a language they're trying to learn knows the difficulty of finding a rule in the piles of intuitive knowledge of a language. In contrast, our simple mathematical model spells out the rules exactly in a few pages of code. 
 
-#### Experimenting and tuning 🔧
+### Experimenting and tuning 🔧
 
 By playing around with this mathematical phrase generation model we can experiment and see what the rules of the language really are. I really enjoyed toying with the code and seeing how the rules I gave it affected the sentences that came out, and then saw if my rules were lining up with what native speakers were doing. I really resonate with something that Lex Fridman said:
 
@@ -790,5 +746,20 @@ After creating a phrase generation model like this we have a bunch of code that 
 
 > "Part of the task of the grammarian is ... to unravel the complexities of languages, and, as far as possible, simplify them." Frank Palmer - [Grammar](https://www.amazon.com/gp/product/B000S5VSAS)
 
-The [code for the Pashto phrase generation engine](https://github.com/lingdocs/pashto-inflector) is open-source (GPLv3 licensed) and available with [on GitHub](https://github.com/lingdocs/pashto-inflector) or [this mirror](https://gitea.lingdocs.com/lingdocs/pashto-inflector).
+### A tool for others to experiment and learn with
 
+I've learned a lot from building and playing with this phrase engine, and I hope it can be a benefit to others as well. This phrase engine is open-source, free, and available to use.
+
+Currently it's being used in the following places:
+
+- In the [LingDocs Pashto Dictionary](https://dictionary.lingdocs.com)
+  - **shows the inflections and conjugations** for all the words in the dictionary
+  - allows users to **build phrases** with all the words in the dictionary
+
+- In the [LingDocs Pashto Grammar](https://grammar.lingdocs.com)
+  - provides **interactive examples** where **learners can adjust phrases**, and see how words and phrases change
+  - creates **automatically generated questions** for a growing number of [grammar quizzes](https://grammar.lingdocs.com/games/)
+
+- In these [YouTube grammar lessons](https://www.youtube.com/watch?v=JhAeiitwfdo&list=PLSvdKFalIo5OD-W63LL8fTQgXxQBgZWAL&ab_channel=LingDocs) that provide a walk-through of the phrase engine and some grammar concepts.
+
+The [code for the Pashto phrase generation engine](https://github.com/lingdocs/pashto-inflector) is open-source and available with [on GitHub](https://github.com/lingdocs/pashto-inflector) or [this mirror](https://gitea.lingdocs.com/lingdocs/pashto-inflector). (GPLv3 licensed - free to use and modify provided you **keep it open source**) 

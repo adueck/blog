@@ -19,7 +19,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@lingdocs/ps-react": "^5.8.2",
+    "@lingdocs/ps-react": "^5.8.3",
     "@mdx-js/react": "^2.3.0",
     "bootstrap": "^4.6.1",
     "gatsby": "^5.6.0",
