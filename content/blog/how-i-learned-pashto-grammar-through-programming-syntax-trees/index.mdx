@@ -24,7 +24,7 @@ import {
 
 Peter Naur talked about [programming as theory building](https://pages.cs.wisc.edu/~remzi/Naur.pdf), and argued that programming is: *"an activity by which programmers form or achieve a certain kind of insight, a theory, of the matters at hand."*
 
-**When we write a program about something we are developing, testing, and imporving a theory about how that thing works.** The program we build gives us a better understanding of the problem, which leads us to improve the program, and on and on as our theory improves.
+**When we write a program about something we are developing, testing, and improving a theory about how that thing works.** The program we build gives us a better understanding of the problem, which leads us to improve the program, and on and on as our theory improves.
 
 ![programming theory building loop](programming-loop.svg)
 
@@ -32,7 +32,7 @@ I've seen this process at work as I've been working at learning Pashto grammar a
 
 ![grammar and programming loop](grammar-programming-loop.svg)
 
-## The challenge of modelling a Pahsto grammar
+## The challenge of modelling a Pashto grammar
 
 Pashto has a reputation for being difficult. As [the linguist John McWhorter says](https://lexiconvalley.substack.com/p/lexicon-valley-what-do-they-speak):
 
@@ -46,7 +46,7 @@ Over the last few years I've been fascinated with trying to understand how this 
 
 ## Where the idea came from
 
-Years back, I began writing an eariler version of [this Pashto grammar](https://grammar.lingdocs.com) while I was also trying to understand how the grammar of Pashto works myself. It started as a sort of open personal notebook. (My apologies to anyone who read the early version!)
+Years back, I began writing an earlier version of [this Pashto grammar](https://grammar.lingdocs.com) while I was also trying to understand how the grammar of Pashto works myself. It started as a sort of open personal notebook. (My apologies to anyone who read the early version!)
 
 I wanted to make little interactive examples where people could see the different conjugations of verbs.
 
@@ -54,7 +54,7 @@ I wanted to make little interactive examples where people could see the differen
 <OldVerbExplorer />
 </div>
 
-I thought I created a pretty clever little system where I could substitute different verbs and nouns in the chart and it would fill in all the conjugations automatically using a sort of custom string templating engine in a React component.
+I thought I created a pretty clever little system where I could substitute different verbs and nouns in the chart and it would fill in all the conjugations automatically substitute the right words in the text (using a sort of custom string templating engine in a React component.)
 
 But things got more and more difficult when I wanted to include examples with variable tenses. Pashto is very complex and to make proper phrases you can't just throw the words together like you can often do in English or other languages. Words needs to inflect, certain words need to move around, and it all seemed to complicated to program. My code for generating phrases was *not* robust or flexible enough. My (untyped, spaghetti) code kept spiralling out of control and I was realizing more and more mistakes in the example phrases I was trying to generate.
 
@@ -288,7 +288,7 @@ Following this grammar, we can write a very simple program that will process any
 The program starts at the top of the tree and keeps looking down *recursively*, adding and multiplying the different sides, until it's evaluated everything down to the bottom.
 
 ```
-How to get the value of an expresion:
+How to get the value of an expression:
     Is it a number ?
         ok, that's it, we're done
     Is it a + ? 
@@ -383,7 +383,7 @@ An NP (Noun Phrase) in Pashto is one of the following:
 A Noun is:
   a noun word
     that can have adjectives
-    that can have an NP as a possesor
+    that can have an NP as a possessor
 
 A Pronoun is:
   a pronoun
@@ -450,7 +450,7 @@ const exC: NP = {
     word: { p: "num", e: "name" },
     plural: false,
     adjectives: [],
-    possesor: {
+    possessor: {
         type: "noun",
         word: { p: "saṛai", e: "man" },
         plural: false,
@@ -472,7 +472,7 @@ const exD: NP = {
 
 </details>
 
-Note that the definitions of NPs are recursive. A noun can have a NP as a possesor, which can have another NP as a possesor, etc. etc. Phrases like "John's friend's father's brother's wife's cousin's ..." can go on *forever*.
+Note that the definitions of NPs are recursive. A noun can have a NP as a possessor, which can have another NP as a possessor, etc. etc. Phrases like "John's friend's father's brother's wife's cousin's ..." can go on *forever*.
 
 So now we have a way to express one little subset of Pashto in syntax trees. But how can we take these syntax trees and teach the computer to turn them into grammatically correct Pashto text?
 
@@ -496,7 +496,7 @@ How to form an NP (as inflected or plain):
         Form the Noun (as inflected or plain)
     Is it a Pronoun?
         Form the Pronoun (as inflected or plain)
-    Is it a Particple?
+    Is it a Participle?
         Form the Participle (as inflected or plain)
 
 How to form a Noun (as inflected or plain):
@@ -505,8 +505,8 @@ How to form a Noun (as inflected or plain):
     Is in inflected?
         Inflect the Noun
     Inflect all the adjectives so they agree with the noun
-    Does it have a Possesor?
-        Form the Possesor NP (as inflected)
+    Does it have a Possessor?
+        Form the Possessor NP (as inflected)
 
 How to form a Pronoun (as inflected or plain):
     Is it inflected?
@@ -549,8 +549,8 @@ function formNoun(noun: Noun, inflected: boolean): Formed<Noun> {
         adjectives: noun.adjectives.map((adj) => (
             inflect(adj, inflected, noun.plural)
         )),
-        ..."possesor" in noun ? {
-            possesor: formNP(noun.possesor, inflected),
+        ..."possessor" in noun ? {
+            possessor: formNP(noun.possessor, inflected),
         } : {},
     };
 }
@@ -578,7 +578,7 @@ I've left out the instructions for actually inflecting the words for simplicitie
 
 Writing out these instructions helped me solidify some rules about what happens with NPs in Pashto:
  - adjectives inflect to agree with the nouns they're attached to
- - possesors are inflected
+ - possessors are inflected
  - etc.
 
 Let's try taking our [example NPs](#example-nps) and forming the words according to the instructions/functions that we just wrote out.
@@ -587,9 +587,9 @@ Let's try taking our [example NPs](#example-nps) and forming the words according
 
 ![forming example a](formed-np-a.svg) 
 
-**Example C.** is a noun "num" (name). So we go to the instructions for forming nouns. We look at the noun and we don't need to inflect it because it's not plural, and it's not an inflected NP. There are also no adjectives attached. But we see that it has a possesor, so we process the possesor NP "old man" as an *inflected* NP. (Possesors are inflected in Pashto). This means that we start the whole process again with this possesor NP. (recursion! 🤓)
+**Example C.** is a noun "num" (name). So we go to the instructions for forming nouns. We look at the noun and we don't need to inflect it because it's not plural, and it's not an inflected NP. There are also no adjectives attached. But we see that it has a possessor, so we process the possessor NP "old man" as an *inflected* NP. (Possessors are inflected in Pashto). This means that we start the whole process again with this possessor NP. (recursion! 🤓)
 
-Moving down the tree we process the NP "old man." It's a noun, so we look at the instructions for forming nouns. It's not plural, but it is inflected, so we need to inflect it to "saṛi." Then we go to process the adjectives. The noun has been inflected so we need to inflect all the adjectives attached. "Zoṛ" (old) inflects to "zaaṛə." There's no possesor and we've reached the bottom of the tree, so we're done.
+Moving down the tree we process the NP "old man." It's a noun, so we look at the instructions for forming nouns. It's not plural, but it is inflected, so we need to inflect it to "saṛi." Then we go to process the adjectives. The noun has been inflected so we need to inflect all the adjectives attached. "Zoṛ" (old) inflects to "zaaṛə." There's no possessor and we've reached the bottom of the tree, so we're done.
 
 ![forming example c](formed-np-c.svg)
 
@@ -623,7 +623,7 @@ I also made another "machine" that takes verbs and gives the correct conjugation
 ![verb machine](verb-machine.svg)
 </div>
 
-Both of these little boxes are pretty complex inside, but we can **forget about how they work**, abstract them into nice little machines and start building more complicated, full phrases with them. Just like mathmeticians build rules on top of other rules and engineers build cars by fitting parts together, we can build a more complex grammar engine by fitting these different parts together.
+Both of these little boxes are pretty complex inside, but we can **forget about how they work**, abstract them into nice little machines and start building more complicated, full phrases with them. Just like mathematicians build rules on top of other rules and engineers build cars by fitting parts together, we can build a more complex grammar engine by fitting these different parts together.
 
 Let's expand our grammar to include phrases with verbs. (I call them VPs, but I am *not* using that term in the same way as people normally in generative grammar!) Here's a really simplified example of how we could define syntax trees with these fuller phrases using what we've built before.
 
@@ -750,7 +750,7 @@ All of these instructions, or functions, get glued together and the computer jus
 
 ![full phrase example](full-phrase-process.svg)
 
-Once I had these basic phrases working, I could start working on exploring and implementing some more advanced features of the languages. In Pashto, there are is a [really special way of shortening phrases](https://grammar.lingdocs.com/phrase-structure/shortening-vps/), [abbreviating possesors as enclitic pronouns](https://grammar.lingdocs.com/pronouns/pronouns-mini/#2-as-a-shrunken-possesive) and also an interesting behaviour around how enclitic particles [stack up after the first unit or "block" in the phrase](https://grammar.lingdocs.com/phrase-structure/blocks-and-kids/).
+Once I had these basic phrases working, I could start working on exploring and implementing some more advanced features of the languages. In Pashto, there are is a [really special way of shortening phrases](https://grammar.lingdocs.com/phrase-structure/shortening-vps/), [abbreviating possessors as enclitic pronouns](https://grammar.lingdocs.com/pronouns/pronouns-mini/#2-as-a-shrunken-possesive) and also an interesting behaviour around how enclitic particles [stack up after the first unit or "block" in the phrase](https://grammar.lingdocs.com/phrase-structure/blocks-and-kids/).
 
 To implement these trickier or more unique parts of the grammar I had move beyond the basic tree structures a bit. But I was still able to keep building on the basic blocks we made earlier. As I programmed it I was amazed to discover some **universal rules in the language that were more simple and beautiful than I could have imagined**. 
 
