@@ -35,11 +35,11 @@ const Seo = ({ description, title, children, image }: {
     `
   )
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title;
+  // const defaultTitle = site.siteMetadata?.title;
   const imageUrl = `${site.siteMetadata?.siteUrl}${image}`
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{title}</title>
       <meta name="description" content={metaDescription} />
       {image && <>
         <meta name="image" content={imageUrl} />
