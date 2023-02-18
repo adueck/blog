@@ -581,7 +581,7 @@ I also made another "machine" that takes verbs and gives the correct conjugation
 
 Both of these little boxes are pretty complex inside, but we can **forget about how they work**, abstract them into nice little machines and start building more complicated, full phrases with them. Just like mathematicians build rules on top of other rules and engineers build cars by fitting parts together, we can build a more complex grammar engine by fitting these different parts together.
 
-Let's expand our grammar to include phrases with verbs. (I call them VPs, but I am *not* using that term in the same way as people normally in generative grammar!) Here's a really simplified example of how we could define syntax trees with these fuller phrases using what we've built before.
+Let's expand our grammar to include phrases with verbs. (I call them VPs, but I am *not* using that term in the same way as people normally in generative grammar! Because I ended up departing from the typical generative grammar framework to make things work better for Pashto.) Here's a really simplified example of how we could define syntax trees with these fuller phrases using what we've built before.
 
 ```
 A VP (Verb-Based Phrase) is Pashto is one of the following:
@@ -708,7 +708,7 @@ All of these instructions, or functions, get glued together and the computer jus
 
 Once I had these basic phrases working, I could start working on exploring and implementing some more advanced features of the languages. In Pashto, there are is a [really special way of shortening phrases](https://grammar.lingdocs.com/phrase-structure/shortening-vps/), [abbreviating possessors as enclitic pronouns](https://grammar.lingdocs.com/pronouns/pronouns-mini/#2-as-a-shrunken-possesive) and also an interesting behaviour around how enclitic particles [stack up after the first unit or "block" in the phrase](https://grammar.lingdocs.com/phrase-structure/blocks-and-kids/).
 
-To implement these trickier or more unique parts of the grammar I had move beyond the basic tree structures a bit. But I was still able to keep building on the basic blocks we made earlier. As I programmed it I was amazed to discover some **universal rules in the language that were more simple and beautiful than I could have imagined**. 
+To implement these trickier or more unique parts of the grammar I had move beyond the basic tree structures. But I was still able to keep building on the basic blocks we made earlier. As I programmed it I was amazed to discover some **universal rules in the language that were more simple and beautiful than I could have imagined**. 
 
 It was a joy to see that once we get the proper basic blocks of logic, we can glue them all together to make endless combinations of phrases and tenses and forms, and they always come out right! It's just like composing functions or logic propositions in math.
 
