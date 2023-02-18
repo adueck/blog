@@ -17,6 +17,10 @@ import mathSyntaxTree4 from "./math-syntax-4.svg";
 import machineLisp from "./eval-lisp-tree.svg";
 import machineLing from "./eval-ling-tree.svg";
 import PhraseBuilder from "./new-verb-explorer/PhraseBuilder";
+import NPBuilder from "./new-verb-explorer/NPBuilder";
+import {
+    defaultTextOptions,
+} from "@lingdocs/ps-react";
 
 Peter Naur talked about [programming as theory building](https://pages.cs.wisc.edu/~remzi/Naur.pdf), and argued that programming is: *"an activity by which programmers form or achieve a certain kind of insight, a theory, of the matters at hand."*
 
@@ -92,9 +96,7 @@ These trees can also be written with parentheses, like this with LISP:
 
 Or like this with generative grammar:
 
-```lisp
-(S (NP (DT The) (NN man)) (VP (VB Saw) (NP (DT the) (NN food))))
-```
+[<sub>S</sub> [<sub>NP</sub> [<sub>DT</sub> The] [<sub>NN</sub> man]] [<sub>VP</sub> [<sub>VB</sub> saw] [<sub>NP</sub> [<sub>DT</sub> the] [<sub>NN</sub> food]]]]
 
 The content is different, but the structure is the same.
 
@@ -597,6 +599,14 @@ Then after the formation step, it's not hard to write a second function that tak
 
 No matter how big or complicated or NPs are, they will all be inflected perfectly *if* our grammar and rules are correct. When we discover the correct rules, it's amazing to see how powerful the underlying structure of the language is. Non-native speakers may stumble over their words or be perplexed by why certain words inflect and how they change in a seemingly illogical and unpredictable way. But once we see the basic set of rules, it all makes sense.
 
+Below is a little playground you can use to create NPs according to the grammar and rules we just spelled out. You can build them from scratch, choose from the examples and modify them, or even get the computer to generate a *totally random* NP. (Note, these random NPs [will be grammatically well-formed, but will often be nonsense](https://en.wikipedia.org/wiki/Colorless_green_ideas_sleep_furiously).)
+
+##### NP Playground
+
+<div className="wide-element">
+    <NPBuilder opts={defaultTextOptions} />
+</div>
+
 #### Expanding the grammar
 
 Now that we have our little NP generation "machine" we can *forget about how it works* and think of it as a black-box machine. For all we care, it just magically takes NP syntax trees and processes them.
@@ -747,7 +757,7 @@ It was a joy to see that once we get the proper basic blocks of logic, we can gl
 **Here's a demo of the phrase building playground that I dreamed of years ago!** You can try looking at the different example sentences and modify them, or build your own from scratch. You can click on the <i className="fas fa-cubes mx-1" /> above the phrases to see their phrase structure. You can also watch [this demo](https://www.youtube.com/watch?v=i3IzRPn4i_w&ab_channel=LingDocs), or [these videos](https://www.youtube.com/playlist?list=PLSvdKFalIo5OD-W63LL8fTQgXxQBgZWAL) for an exploration of various grammar features. 
 
 <div className="wide-element" style={{ marginBottom: "-6rem" }}>
-<PhraseBuilder />
+    <PhraseBuilder />
 </div>
 
 #### A mathematical model for Pashto phrase generation

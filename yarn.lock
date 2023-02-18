@@ -1190,18 +1190,6 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
-"@floating-ui/core@^1.2.1":
-  "integrity" "sha512-LSqwPZkK3rYfD7GKoIeExXOyYx6Q1O4iqZWwIehDNuv3Dv425FIAE8PRwtAx1imEolFTHgBEcoFHm9MDnYgPCg=="
-  "resolved" "https://registry.npmjs.org/@floating-ui/core/-/core-1.2.1.tgz"
-  "version" "1.2.1"
-
-"@floating-ui/dom@^1.0.1":
-  "integrity" "sha512-Rt45SmRiV8eU+xXSB9t0uMYiQ/ZWGE/jumse2o3i5RGlyvcbqOF4q+1qBnzLE2kZ5JGhq0iMkcGXUKbFe7MpTA=="
-  "resolved" "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.2.1.tgz"
-  "version" "1.2.1"
-  dependencies:
-    "@floating-ui/core" "^1.2.1"
-
 "@formkit/auto-animate@^1.0.0-beta.3":
   "integrity" "sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w=="
   "resolved" "https://registry.npmjs.org/@formkit/auto-animate/-/auto-animate-1.0.0-beta.6.tgz"
@@ -1563,10 +1551,10 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lingdocs/ps-react@^5.7.15":
-  "integrity" "sha512-92hRCiuRg0gKyyY+MLiMB4Dx39VAqjBgA637u1hyZ7ebMia+ak3R5fk7TimByWCISVmAF4wathK8knymBTdN6A=="
-  "resolved" "https://npm.lingdocs.com/@lingdocs%2fps-react/-/ps-react-5.7.15.tgz"
-  "version" "5.7.15"
+"@lingdocs/ps-react@^5.8.0":
+  "integrity" "sha512-n8Bt8g3mQnurlpDxQ9CusrexSQ6VZwONIXParp3XCng3zYhaFUuO/UgE4cmwbqAMdR2tfbpXqYVQB4TiwimCaQ=="
+  "resolved" "https://npm.lingdocs.com/@lingdocs%2fps-react/-/ps-react-5.8.0.tgz"
+  "version" "5.8.0"
   dependencies:
     "@formkit/auto-animate" "^1.0.0-beta.3"
     "classnames" "^2.2.6"
@@ -2292,10 +2280,10 @@
     "@types/node" "*"
     "form-data" "^3.0.0"
 
-"@types/node@*", "@types/node@^18.13.0", "@types/node@>=10.0.0":
-  "integrity" "sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.13.0.tgz"
-  "version" "18.13.0"
+"@types/node@*", "@types/node@^18.14.0", "@types/node@>=10.0.0":
+  "integrity" "sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.14.0.tgz"
+  "version" "18.14.0"
 
 "@types/node@^17.0.5":
   "integrity" "sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw=="
@@ -7871,10 +7859,10 @@
   dependencies:
     "fs-monkey" "^1.0.3"
 
-"memoize-one@^6.0.0":
-  "integrity" "sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw=="
-  "resolved" "https://registry.npmjs.org/memoize-one/-/memoize-one-6.0.0.tgz"
-  "version" "6.0.0"
+"memoize-one@^5.0.0":
+  "integrity" "sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q=="
+  "resolved" "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
+  "version" "5.2.1"
 
 "memoizee@^0.4.15":
   "integrity" "sha512-UBWmJpLZd5STPm7PMUlOw/TSy972M+z8gcyQ5veOnSDRREz/0bmpyTfKt3/51DhEBqCZQn1udM/5flcSPYhkdQ=="
@@ -9654,19 +9642,17 @@
   "version" "0.14.0"
 
 "react-select@^5.4.0":
-  "integrity" "sha512-lJGiMxCa3cqnUr2Jjtg9YHsaytiZqeNOKeibv6WF5zbK/fPegZ1hg3y/9P1RZVLhqBTs0PfqQLKuAACednYGhQ=="
-  "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.7.0.tgz"
-  "version" "5.7.0"
+  "integrity" "sha512-CjE9RFLUvChd5SdlfG4vqxZd55AZJRrLrHzkQyTYeHlpOztqcgnyftYAolJ0SGsBev6zAs6qFrjm6KU3eo2hzg=="
+  "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.4.0.tgz"
+  "version" "5.4.0"
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"
     "@emotion/react" "^11.8.1"
-    "@floating-ui/dom" "^1.0.1"
     "@types/react-transition-group" "^4.4.0"
-    "memoize-one" "^6.0.0"
+    "memoize-one" "^5.0.0"
     "prop-types" "^15.6.0"
     "react-transition-group" "^4.3.0"
-    "use-isomorphic-layout-effect" "^1.1.2"
 
 "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825":
   "integrity" "sha512-JyCjbp6ZvkH/T0EuVPdceYlC8u5WqWDSJr2KxDvc81H2eJ+7zYUN++IcEycnR2F+HmER8QVgxfotnIx352zi+w=="
@@ -11438,11 +11424,6 @@
     "loader-utils" "^2.0.0"
     "mime-types" "^2.1.27"
     "schema-utils" "^3.0.0"
-
-"use-isomorphic-layout-effect@^1.1.2":
-  "integrity" "sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA=="
-  "resolved" "https://registry.npmjs.org/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz"
-  "version" "1.1.2"
 
 "util-deprecate@^1.0.1", "util-deprecate@^1.0.2", "util-deprecate@~1.0.1":
   "integrity" "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
