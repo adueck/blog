@@ -57,7 +57,7 @@ I wanted to make little interactive examples where people could see the differen
 
 I thought I created a pretty clever little system where I could substitute different verbs and nouns in the chart and it would fill in all the conjugations automatically substitute the right words in the text (using a sort of custom string templating engine in a React component.)
 
-But things got more and more difficult when I wanted to include examples with variable tenses. Pashto is very complex and to make proper phrases you can't just throw the words together like you can often do in English or other languages. Words needs to inflect, certain words need to move around, and it all seemed to complicated to program. My code for generating phrases was *not* robust or flexible enough. My (untyped, spaghetti) code kept spiralling out of control and I was realizing more and more mistakes in the example phrases I was trying to generate.
+But things got more and more difficult when I wanted to include examples with variable tenses. Pashto is very complex and to make proper phrases you can't just throw the words together like you can often do in English or other languages. Words needs to inflect, certain words need to move around, and it all seemed too complicated to program. My code for generating phrases was *not* robust or flexible enough. My (untyped, spaghetti) code kept spiralling out of control and I was realizing more and more mistakes in the example phrases I was trying to generate.
 
 Turns out string templating was not a good idea for modelling language! I needed a new way of thinking about and tackling the problem, some kind of [domain specific language](https://en.wikipedia.org/wiki/Domain-specific_language) to be able to handle the logic of Pashto sentences.
 
