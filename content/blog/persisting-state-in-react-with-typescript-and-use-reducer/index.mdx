@@ -338,6 +338,16 @@ export default function useStickyState<T extends SaveableData>(
 
 If we end up using this code on a SSR component, *the loading from persisted state won't work* and it will behave like a regular `useState` hook, but at least it won't break any builds.
 
+### NPM Package and Source Code
+
+These hooks are available [on NPM](https://www.npmjs.com/package/use-sticky-reducer).
+
+```
+yarn add use-sticky-reducer
+```
+
+Source code [on GitHub](https://github.com/adueck/use-sticky-reducer)
+
 ### Live Sandbox Demo
 
 Here's a demo of all the code working together:
