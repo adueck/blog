@@ -1,8 +1,7 @@
 ---
 title: How I learned Pashto grammar through programming syntax trees
-date: "2023-02-10"
-image: "./syntax-trees.jpg"
-mainImage: "syntax-trees.jpg"
+date: "2023-02-18"
+image: epic-handshake-syntax-trees.jpg
 ---
 
 import OldVerbExplorer from "./old-verb-explorer/OldVerbExplorer";
@@ -39,7 +38,7 @@ Pashto has a reputation for being difficult. As [the linguist John McWhorter say
 
 > "Persian, real easy. But Pashto, just insurmountable ... it's like it's trying to be hard."
 
-While many other languages, like English, have been simplified over time, **Pashto retains a lot of beautiful complexity**. Pashto has [grammatical gender](https://grammar.lingdocs.com/nouns/nouns-gender/), [inflections](https://grammar.lingdocs.com/inflection/inflection-patterns/), [aspect divisions](https://grammar.lingdocs.com/verbs/verb-aspect/), [split-ergativity](https://grammar.lingdocs.com/phrase-structure/vp/), [interesting types of compound verbs](https://grammar.lingdocs.com/compound-verbs/intro/) and an amazing way of [shortening phrases with enclitic pronouns](https://grammar.lingdocs.com/phrase-structure/vp/), and lots more. 
+While many other languages, like English, have been simplified over time, **Pashto retains a lot of beautiful complexity**. Pashto has [inflections](https://grammar.lingdocs.com/inflection/inflection-patterns/), [aspect divisions](https://grammar.lingdocs.com/verbs/verb-aspect/),[grammatical gender](https://grammar.lingdocs.com/nouns/nouns-gender/), [split-ergativity](https://grammar.lingdocs.com/phrase-structure/vp/), [interesting types of compound verbs](https://grammar.lingdocs.com/compound-verbs/intro/) and an amazing way of [shortening phrases with enclitic pronouns](https://grammar.lingdocs.com/phrase-structure/vp/), and lots more. 
 
 Unfortunately there are not a lot of resources to help people understand the intricacies of these features in Pashto, so many people just throw up their hands and say the language is difficult or illogical. I've had a lot of fun learning this language and its grammar, and I've been amazed to see **a beautiful, simple, and clear structure** hiding in the mountains of seemingly daunting complexity.
 
@@ -557,7 +556,7 @@ Then after the formation step, it's not hard to write a second function that tak
 
 No matter how big or complicated or NPs are, they will all be inflected perfectly *if* our grammar and rules are correct. When we discover the correct rules, it's amazing to see how powerful the underlying structure of the language is. Non-native speakers may stumble over their words or be perplexed by why certain words inflect and how they change in a seemingly illogical and unpredictable way. But once we see the basic set of rules, it all makes sense.
 
-Below is a little playground you can use to create NPs according to the grammar and rules we just spelled out. You can build them from scratch, choose from the examples and modify them, or even get the computer to generate a *totally random* NP. (Note, these random NPs [will be grammatically well-formed, but will often be nonsense](https://en.wikipedia.org/wiki/Colorless_green_ideas_sleep_furiously).)
+Below is a little playground you can use to create NPs according to the grammar and rules we just spelled out. You can build them from scratch, choose from the examples and modify them, or even get the computer to generate a *totally random* NP. Note that these random NPs [will be grammatically well-formed, but will often be nonsense](https://en.wikipedia.org/wiki/Colorless_green_ideas_sleep_furiously). They will be *syntactically correct* but might be *semantically insane*.
 
 ##### NP Playground
 
@@ -724,7 +723,7 @@ Demo and instructions here:
 
 ### A mathematical model for Pashto phrase generation
 
-So now we have a mathematical function that takes a syntax tree and outputs a grammatically correct Pashto sentence. To adapt a phrase from [Stephen Wolfram](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/), this is **a mathematical theory of what humans are doing when they speak Pashto**. With this approach to explicitly spelling out the rules in a phrase generating grammar, we have a clear theory that we can fully examine and prove.
+So now we have a mathematical function that takes a syntax tree and outputs a grammatically correct Pashto sentence. To adapt a phrase from [Stephen Wolfram](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/), this is **a mathematical theory of what humans are doing when they speak Pashto**. And it is [computable (or effectively calculable)](https://en.wikipedia.org/wiki/Computable_function) function. That is, it is a clear set of instructions that a computer can carry out to get the right value. With this approach to explicitly spelling out the rules in a phrase generating grammar, we have a clear theory that we can fully examine and prove.
 
 ![pashto phrase generation function](phrase-function.svg)
 
@@ -732,7 +731,7 @@ So now we have a mathematical function that takes a syntax tree and outputs a gr
 
 ![pashto phrase generation neural net](phrase-neural-net.svg)
 
-Anyone who's tried to ask a native speaker about a language they're trying to learn knows the difficulty of finding a rule in the piles of intuitive knowledge of a language. In contrast, our simple mathematical model spells out the rules exactly in a few pages of code. 
+Anyone who's tried to ask a native speaker about a language they're trying to learn knows the difficulty of finding a rule in the speaker's intuitive knowledge of a language. In contrast, our mathematical model spells out the rules exactly in a few pages of code. 
 
 ### Experimenting and tuning 🔧
 
@@ -740,13 +739,15 @@ By playing around with this mathematical phrase generation model we can experime
 
 > "I learn by building. I think through a thing by building it. Programming is a wonderful thing because it allows you to build a little toy example. In the same way you can do a little thought experiment, **programming allows you to create a thought experiment in action. It can move, it can live. And then you can ask questions of it**." - [Lex Fridman](https://youtu.be/sY8aFSY2zv4?t=8480)
 
-We can build a model of Pashto grammar with all of it's rules, and we can try making different phrases with it. Does it output the same things that a native speaker does? Always? If so, our rules are correct. We can also look at the rules and logic that we've given the computer and we can ask, can we simplify and refactor these rules? Are we repeating ourselves needlessly? Can we create better rules to avoid repetition and extra details? When we do that, does it still output the phrases correctly?
+We can build a model of Pashto grammar with all of its rules, and we can try making different phrases with it. Does it output the same things that a native speaker does? Always? If so, our rules are correct. We can also look at the rules and logic that we've given the computer and we can ask, can we simplify and refactor these rules? Are we repeating ourselves needlessly? Can we create better rules to avoid repetition and extra details? When we do that, does it still output the phrases correctly? Through this process of iterative development and refactoring, we can **try to discover the simplest, and truest axioms of the grammar** used in natural language.
+
+> "Each new machine that is built is an experiment. Actually constructing the machine poses a question to nature; and we listen for the answer by observing the machine in operation and analyzing it by all analytical and measurement means available." - Newell and Simon (1975 Turing Award Lecture) 
 
 While building this phrase generator a faced some challenges in figuring out how to model some of the trickier, or more idiosyncratic parts of Pashto, like how it shortens phrases with enclitic pronouns, or how compound verbs break up into different parts depending on the aspect. I had to think about what the basic rules were, and how I could boil them down to the simplest instructions that the computer can follow.
 
 As Lex Fridman said in the quote above, computers let us create and play with a little thought experiments. "What if this is the rule? Or what if *this* is the rule?" If we think we see a very simple rule, we can try it out by giving the computer that instruction. There were many times when I thought, "Is this really simple rule the thing that native speakers are always following, for everything?" And then there was the joy of discovering a couple times that YES, it is!!
 
-After creating a phrase generation model like this we have a bunch of code that spells out the grammar of the language. Not everyone can read this code, but we can take these rules and explain them to others who are trying to understand the language. That's what I've been trying to do with the [LingDocs Pashto Grammar](https://grammar.lingdocs.com/), to put these rules in the plainest language possible.
+After creating a phrase generation model like this we have a bunch of code (still to be expanded and improved) that spells out the grammar of the language. Not everyone can read this code, but we can take these rules and explain them in human terms to others who are trying to understand the language. That's what I've been trying to do with the [LingDocs Pashto Grammar](https://grammar.lingdocs.com/), to communicate these rules in the plainest language possible.
 
 > "Part of the task of the grammarian is ... to unravel the complexities of languages, and, as far as possible, simplify them." Frank Palmer - [Grammar](https://www.amazon.com/gp/product/B000S5VSAS)
 

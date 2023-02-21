@@ -62,6 +62,7 @@ const config: GatsbyConfig = {
       options: {
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,
             options: {

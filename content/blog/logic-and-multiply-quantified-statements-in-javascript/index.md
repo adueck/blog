@@ -1,7 +1,6 @@
 ---
 title: Logic and Multiply-Quantified Statements in JavaScript
 date: "2023-01-24"
-description: ""
 image: blog-post-banner.jpg
 ---
 
