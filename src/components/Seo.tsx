@@ -35,8 +35,8 @@ const Seo = ({ description, title, children, image }: {
     `
   )
   const metaDescription = description || site.siteMetadata.description
-  // const defaultTitle = site.siteMetadata?.title;
   const imageUrl = `${site.siteMetadata?.siteUrl}${image}`
+    // fix for strange double prefix bug in prod builds
     .replace("/blog/blog/", "/blog/");
   return (
     <>
