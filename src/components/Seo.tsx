@@ -37,6 +37,7 @@ const Seo = ({ description, title, children, image }: {
   const metaDescription = description || site.siteMetadata.description
   // const defaultTitle = site.siteMetadata?.title;
   const imageUrl = `${site.siteMetadata?.siteUrl}${image}`
+    .replace("/blog/blog/", "/blog/");
   return (
     <>
       <title>{title}</title>
