@@ -41,6 +41,7 @@ const Seo = ({ description, title, children, image }: {
   return (
     <>
       <title>{title}</title>
+      <meta name="google-site-verification" content="jKQ9ZfXtu1wY0BZEM8TQKEstI_72VLWuYn_e4tQu3ag" />
       <meta name="description" content={metaDescription} />
       {image && <>
         <meta name="image" content={imageUrl} />

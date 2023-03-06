@@ -14,7 +14,7 @@ const IndexPage: React.FC<PageProps<Queries.IndexPageQuery>> = ({
   // const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMdx.nodes;
 
-  return <Layout location={location}>
+  return <Layout location={location}> 
     <div style={{ marginTop: "3rem", marginBottom: "4rem" }}>
       {posts.map(post => {
         const title = post.frontmatter?.title || post.fields?.slug
@@ -44,7 +44,10 @@ const IndexPage: React.FC<PageProps<Queries.IndexPageQuery>> = ({
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Adam Dueck - Blog</title>
+export const Head: HeadFC = () => <>
+  <title>Adam Dueck - Blog</title>
+  <meta name="google-site-verification" content="jKQ9ZfXtu1wY0BZEM8TQKEstI_72VLWuYn_e4tQu3ag" />
+</>;
 
 export const query = graphql`
   query IndexPage {
