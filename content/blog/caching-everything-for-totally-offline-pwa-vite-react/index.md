@@ -59,7 +59,7 @@ export default defineConfig({
 
 Make a web manifest with icons (you can use [a tool like this](https://www.simicart.com/manifest-generator.html/)).
 
-Put the icons in your `/public` folter and the web manifest into the `VitePWA()` config:
+Put the icons in your `/public` folder and the web manifest into the `VitePWA()` config:
 
 ```ts
 // vite.config.ts
