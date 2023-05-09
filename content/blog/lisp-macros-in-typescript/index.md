@@ -1,6 +1,7 @@
 ---
 title: Making LISP-style macros work with destructuring in TypeScript
 date: "2023-05-09"
+image: fraction.jpg
 ---
 
 ![A fraction of our power with TypeScript and LISP](fraction.jpg)
