@@ -143,8 +143,8 @@ const config: GatsbyConfig = {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + "/blog" + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + "/blog" + node.fields.slug,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
                 })
               })
             },
