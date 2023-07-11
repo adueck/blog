@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     title: `Adam Dueck - Blog`,
     author: {
       name: `Adam Dueck`,
-      summary: `who likes learning about languages human, or digitial.`,
+      summary: `who likes learning about languages human, or digital.`,
       website: "https://adueck.github.io",
     },
     description: `A blog about language, software development, and everything in-between`,
