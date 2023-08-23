@@ -303,7 +303,7 @@ An applicitive functor let's us apply a **function in a container** to some **da
 
 ![applicative functor diagram](./applicative-diagram.png)
 
-At first I struggled to imagine why I would ever want to do this. Why would I want to put a *function* in the same container as the data??
+At first I struggled to imagine why I would ever want to do this. Why would I want to put a *function* in the same kind of container as the data??
 
 But here's the cool thing... Just like I could have a potential length options for my data, I could have potential length options for my function! So if I wanted to pass in a different function depending on the length of the data, I could do that!
 
