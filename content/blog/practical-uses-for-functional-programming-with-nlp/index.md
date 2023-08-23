@@ -1,6 +1,6 @@
 ---
 title: Practical uses for functional programming with NLP in TypeScript
-date: "2023-08-23"
+date: "2023-08-22"
 description: "Sometimes people struggle to understand what monoids, functors, and monads actually are and how they could ever be useful outside of the typical examples..."
 image: applicative-diagram.png
 ---
