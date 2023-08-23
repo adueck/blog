@@ -1,19 +1,19 @@
 ---
-title: Practical uses for functional programming with NLP in TypeScript
+title: Practical uses for functional programming in TypeScript (examples from NLP)
 date: "2023-08-22"
-description: "Sometimes people struggle to understand what monoids, functors, and monads actually are and how they could ever be useful outside of the typical examples..."
+description: "People often struggle to understand what monoids, functors, and monads actually are and how they could ever be useful outside of the typical examples..."
 image: applicative-diagram.png
 ---
 
 As I have been learning about functional programming, I've been delighted to see how these seemingly abstract FP contepts can be used to smooth over real-life pain points that I was running into in my code base. As I was understanding what monoids, functors, and monads actually were, I also started to see how they could be used to instantly and safely melt away huge chunks of repetitive and confusing code.
 
-Sometimes people struggle to see how these "esoteric" ideas from functional programming could possibly be useful outside of the typical examples that we often see in tutorials:
+People struggle often struggle to see how these "esoteric" ideas from functional programming could possibly be useful outside of the typical examples that we often see in tutorials:
 
 - A monoid for string concatenation? Just use `+`
 - A functor for mapping over arrays? That's just `Array.map()`
 - A monad for error handling, IO, or async? Come on bro... don't overcomplicate things...
 
-But when we really try to understand these concepts and use these concepts in different settings, we find that we have some very powerful tools that can serve us in many more ways than just mapping over arrays, or handling errors. 
+But when we really get a handle on these FP concepts, we find that we have some very powerful tools that can help us in many more ways than just mapping over arrays, or handling errors.
 
 Let me explain how I've used some functional programming concepts while building [pashto-inflector](https://github.com/lingdocs/pashto-inflector) in TypeScript, a library for working with Pashto text, parsing, and phrase generation. Hopefully these use-cases will help you grok the FP concepts, and give you ideas for how you might want to use them as well.
 
