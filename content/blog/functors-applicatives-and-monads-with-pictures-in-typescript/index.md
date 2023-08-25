@@ -341,14 +341,14 @@ Just 8
 
 `Applicative` pushes `Functor` aside. "Big boys can use functions with any number of arguments," it says. "Armed `<$>` and `<*>`, I can take any function that expects any number of unwrapped values. Then I pass it all wrapped values, and I get a wrapped value out! AHAHAHAHAH!"
 
-```typescript
+```ts
 > (*) <$> Just 5 <*> Just 3
 Just 15
 ```
 
 And hey! There's a function called liftA2 that does the same thing:
 
-```typescript
+```ts
 > liftA2 (*) (Just 5) (Just 3)
 Just 15
 ```
@@ -460,7 +460,7 @@ half x = if even x
 
 In TypeScript:
 
-```
+```ts
 function isEven(n: number): boolean {
   return n % 2 === 0;
 }
@@ -564,7 +564,7 @@ Cool stuff! So now we know that `Maybe` is a `Functor`, an `Applicative`, and a 
 
 Just for completeness, we should also mention that Monads are defined with another function called `return` which takes a plain value and returns it wrapped in the data type of our Monad. This is the same thing as `pure` in the Applicative.
 
-```typescript
+```ts
 function returnMaybe<A>(a: A): Maybe<A> {
   return { just: A };
 }
@@ -598,7 +598,7 @@ All three functions take a regular value (or no value) and return a wrapped valu
 
 ![monad io](./monad_io.png)
 
-```typescript
+```ts
 getLine >>= readFile >>= putStrLn
 ```
 
@@ -619,7 +619,7 @@ As Joel Kaasinen and John Lång pointed out [in this excellent Haskell MOOC](htt
 
 `Promise.then` works a lot like `>>=`.
 
-```typescript
+```ts
 import prompt from "prompt-async";
 import fs from "fs";
 
@@ -634,7 +634,7 @@ Just like the `bind` function, the `Promise.then()` method take a function that 
 
 And the `async` notation used for promises also looks and works just like the `do` notation for monads in Haskell!
 
-```typescript
+```ts
 async function printFile() {
   const filename = await prompt.get(["filename"]);
   const contents = await fs.promises.readFile(filename);
@@ -653,7 +653,7 @@ In Haskell:
 
 Or in TypeScript for our purposes...
 
-1. A function is a data type that has a `fmap` function defined for it.
+1. A function is a data type that has an `fmap` function defined for it.
 2. An applicative is a data type that have `apply` and `pure` functions defined for it.
 3. A monad is a data type that has `bind` and `return` functions defined for it.
 4. Our `Maybe` data type implements all three, so it is a functor, an applicative, *and* a monad.
