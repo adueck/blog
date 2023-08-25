@@ -2,7 +2,7 @@
 title: Functors, Applicatives, And Monads In Pictures (In TypeScript)
 date: "2023-09-25"
 description: "This is a translation of Functors, Applicatives, And Monads In Pictures into TypeScript, with the Haskell examples alongside for reference and comparison."
-image: functor-def-ts.png
+image: ts-recap.png
 ---
 
 <aside>
