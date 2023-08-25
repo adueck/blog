@@ -404,4 +404,4 @@ const withEndings = stems.map(applyEnding({
 
 ## Monad
 
-As for monads... I found a really sweet use case for them while working on the parser [pashto-inflector](https://github.com/lingdocs/pashto-inflector) as a way to handle the tokens and error messages being passed around between the parsing functions. But... that will be left for a topic for another day. 
+As for monads... I found a really sweet use case for them while working on the parser in [pashto-inflector](https://github.com/lingdocs/pashto-inflector). I used monads as a way to handle the tokens and error messages being passed around between the parsing functions. But... that will be left for a topic for another day. 
