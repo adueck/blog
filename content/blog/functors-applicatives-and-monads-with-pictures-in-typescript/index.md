@@ -658,14 +658,6 @@ Or in TypeScript for our purposes...
 3. A monad is a data type that has `bind` and `return` functions defined for it.
 4. Our `Maybe` data type implements all three, so it is a functor, an applicative, *and* a monad.
 
-Here's a sandbox with our `Maybe` (functor/applicative/monad) defined below:
-
-<iframe src="https://stackblitz.com/edit/typescript-tvpp4i?embed=1&file=index.ts&view=editor"
-    style={{ width: "100%", height: "650px", border: 0, borderRadius: "4px", overflow: "hidden" }}
-    title="jsx-text-transformation"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
-
 What is the difference between the three?
 
 ![recap](./recap.png)
@@ -674,4 +666,22 @@ functors: you apply a function to a wrapped value using `fmap` or `<$>`
 applicatives: you apply a wrapped function to a wrapped value using `<*>` or `liftA`  
 monads: you apply a function that returns a wrapped value, to a wrapped value using `>>=` or `lift`  
 
+Here's a visual recap of the general concepts in TypeScript style:
+
+![recap ts](./recap-ts.png)
+
 So, dear friend (I think we are friends by this point), I think we both agree that monads are easy and a SMART IDEA(tm). Now that you've wet your whistle on this guide, why not pull a Mel Gibson and grab the whole bottle. Check out LYAH's [section on Monads](http://learnyouahaskell.com/a-fistful-of-monads). There's a lot of things I've glossed over because Miran does a great job going in-depth with this stuff.
+
+Here's a sandbox with our `Maybe` (functor/applicative/monad) defined below:
+
+<iframe src="https://stackblitz.com/edit/typescript-tvpp4i?embed=1&file=index.ts&view=editor"
+    style={{ width: "100%", height: "650px", border: 0, borderRadius: "4px", overflow: "hidden" }}
+    title="jsx-text-transformation"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+<hr />
+
+This has been a translation and adaptation of of [Functors, Applicatives, And Monads In Pictures](https://www.adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) by [Adit](https://www.adit.io/index.html) into TypeScript. 
+
+
