@@ -617,7 +617,7 @@ foo = do
 
 As Joel Kaasinen and John Lång pointed out [in this excellent Haskell MOOC](https://haskell.mooc.fi/part2#monads-in-other-languages), JavaScript / TypeScript does something very similar with Promises, although there is [much](https://hackernoon.com/functional-javascript-functors-monads-and-promises-679ce2ab8abe) [disagreement](https://stackoverflow.com/questions/45712106/why-are-promises-monads) about whether they are really monads.
 
-`Promise.then` works a lot like `>>=`.
+`Promise.then` works a lot like `>>=` (bind).
 
 ```ts
 import prompt from "prompt-async";
@@ -630,7 +630,7 @@ prompt.get(["filename"]).then(filename => {
 });
 ```
 
-Just like the `bind` function, the `Promise.then()` method take a function that takes a plain value and returns another value wrapped in a `Promise` (but you can also just a plain value) and get out of Monad land, kind of like the `return` function in Haskell.
+Just like the `bind` or `>>=` function, the `Promise.then()` method take a function that takes a plain value and returns another value wrapped in a `Promise`. (You can also return a plain value though.)
 
 And the `async` notation used for promises also looks and works just like the `do` notation for monads in Haskell!
 
