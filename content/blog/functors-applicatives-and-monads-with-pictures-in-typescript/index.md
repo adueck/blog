@@ -668,7 +668,11 @@ monads: you apply a function that returns a wrapped value, to a wrapped value us
 
 Here's a visual recap of the general concepts in TypeScript style:
 
-![recap ts](./recap-ts.png)
+![summary of functor (fmap), applicative (apply), and monad (bind) in basic TypeScript types](./recap-ts.png)
+
+Notice how the only thing that changes in all three is the function passed in on the left? So we can see that these are *all different ways of getting from a wrapped `A` to a wrapped `B`*. We can think of Functors, Applicatives, and Monads as definitions for ways that we can link these transformations together using different kinds of functions.
+
+![summary of functor, applicative, and monad in basic TypeScript types](./chained-recap.png)
 
 So, dear friend (I think we are friends by this point), I think we both agree that monads are easy and a SMART IDEA(tm). Now that you've wet your whistle on this guide, why not pull a Mel Gibson and grab the whole bottle. Check out LYAH's [section on Monads](http://learnyouahaskell.com/a-fistful-of-monads). There's a lot of things I've glossed over because Miran does a great job going in-depth with this stuff.
 
