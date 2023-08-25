@@ -670,7 +670,7 @@ Here's a visual recap of the general concepts in TypeScript style:
 
 ![summary of functor (fmap), applicative (apply), and monad (bind) in basic TypeScript types](./recap-ts.png)
 
-Notice how the only thing that changes in all three is the function passed in on the left? So we can see that these are *all different ways of getting from a wrapped `A` to a wrapped `B`*. We can think of Functors, Applicatives, and Monads as definitions for ways that we can link these transformations together using different kinds of functions.
+Notice how the only thing that changes in all three is the function passed in on the left? So we can see that these are *all different ways of getting from a wrapped `A` to a wrapped `B`*.
 
 ![summary of functor, applicative, and monad in basic TypeScript types](./chained-recap.png)
 
