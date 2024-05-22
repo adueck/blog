@@ -1,11 +1,10 @@
 ---
 title: Proofs are Programs - A Few Little Examples of the Curry-Howard Correspondence
 date: "2024-05-22"
-description: "This is a translation of Functors, Applicatives, And Monads In Pictures into TypeScript, with the Haskell examples alongside for reference and comparison."
-image: recap-ts.png
+description: "Proofs are programs, and programs are proofs. That's basically what the Curry-Howard correspondance says. While learning about direct proofs in math, it helped me to think of a direct proof as a simple function that I was trying to write..."
 ---
 
-Proofs are programs, and programs are proofs. That's basically what the [Curry-Howard correspondance](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence).
+Proofs are programs, and programs are proofs. That's basically what the [Curry-Howard correspondance](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) says.
 
 While learning about direct proofs in math, it helped me to think of a direct proof as a simple function that I was trying to write. For example, let's say we need to prove the following:
 
