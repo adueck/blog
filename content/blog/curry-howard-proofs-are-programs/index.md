@@ -42,7 +42,6 @@ $$
 (2x + 1) + (2y + 1)
 \\= 2x + 2y + 2
 \\= 2(x + y + 1)
-\\= 2n
 $$
 
 Now we know that $x$, $y$ and $1$ are integers, and we know that the sum of any integers is an integer. So we could call the sum of these integers $n$, an integer. $x + y + 1 = n$
