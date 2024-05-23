@@ -119,7 +119,7 @@ To prove this, we can use the method of proof by induction.
 
 1. Show that it's true with the base value: 8¢
 2. Assume that this will work for any value $\geq$ 8¢
-3. Show how it will work for any value $+$ 1¢
+3. Show how it will work for any value $\geq$ 8¢ $+$ 1¢
 
 **First**, we need to prove that this is true **for the base value**: 8¢.
 
