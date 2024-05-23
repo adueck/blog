@@ -8,9 +8,7 @@ Proofs are programs, and programs are proofs. That's basically what the [Curry-H
 
 While learning about direct proofs in math, it helped me to think of a direct proof as a simple function that I was trying to write. For example, let's say we need to prove the following:
 
-$$
-\text{if }a\text{ and }b\text{ are odd numbers, then }a + b\text{ is even} 
-$$
+if $a$ and $b$ are odd numbers, then $a + b$ is even
 
 Using the method of direct proof, we need to show how adding any two odd numbers together results in an even number.
 
@@ -40,11 +38,11 @@ Using some algebraic steps we can manipulate these numbers to show that this res
 $$
 (2x + 1) + (2y + 1)
 \\= 2x + 2y + 2
-\\= 2(x + y + 2)
+\\= 2(x + y + 1)
 \\= 2n
 $$
 
-Now we know that $x$, $y$ and $2$ are integers, and we know that the sum of any integers is an integer. So we could call the sum of these integers $n$, an integer. $x + y + 2 = n$
+Now we know that $x$, $y$ and $1$ are integers, and we know that the sum of any integers is an integer. So we could call the sum of these integers $n$, an integer. $x + y + 1 = n$
 
 Therefore we have our even number! Let's look at the whole process.
 
@@ -52,7 +50,7 @@ $$
 a + b
 \\= (2x + 1) + (2y + 1)
 \\= 2x + 2y + 2
-\\= 2(x + y + 2)
+\\= 2(x + y + 1)
 \\= 2n
 $$
 
