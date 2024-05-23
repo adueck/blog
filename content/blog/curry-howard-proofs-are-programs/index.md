@@ -1,10 +1,15 @@
 ---
-title: Proofs are Programs - A Few Little Examples of the Curry-Howard Correspondence
+title: "Proofs are Programs: A Few Examples of the Curry-Howard Correspondence"
 date: "2024-05-22"
 description: "Proofs are programs, and programs are proofs. That's basically what the Curry-Howard correspondance says. While learning about direct proofs in math, it helped me to think of a direct proof as a simple function that I was trying to write..."
+image: proofs-are-programs.jpg
 ---
 
+![proofs are programs Howard-Curry correspondance](./proofs-are-programs.jpg)
+
 Proofs are programs, and programs are proofs. That's basically what the [Curry-Howard correspondance](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) says.
+
+## Direct Proofs and Functions
 
 While learning about direct proofs in math, it helped me to think of a direct proof as a simple function that I was trying to write. For example, let's say we need to prove the following:
 
@@ -12,15 +17,13 @@ if $a$ and $b$ are odd numbers, then $a + b$ is even
 
 Using the method of direct proof, we need to show how adding any two odd numbers together results in an even number.
 
-## Direct Proofs and Functions
-
 We can think of this proof like a little function we are trying to write:
 
 ```ts
 function addOdds(a: OddNumber, b: OddNumber): EvenNumber {
   // TODO: Fill this in with some stuff that
-  // takes two odd numbers and adds them together
-  // then returns the result as an even number
+  // takes two odd numbers, adds them together
+  // and returns the result as an even number
 }
 ```
 
