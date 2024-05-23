@@ -54,7 +54,7 @@ a + b
 \\= 2n
 $$
 
-Just like as if we were writing a function, we took an input (in this case two odd numbers) and we "proved" that we could add these together and output an even number. The whole process felt a lot like trying to write a function that took an input and tried to manipulate the value(s) to match the return type of the function.
+Just as if we were writing a function, we took an input (in this case two odd numbers) and we "proved" that we could add these together and output an even number. The whole process felt a lot like trying to write a function that took an input and trying to manipulate the value(s) to match the return type of the function.
 
 ## Inductive Proofs and Recursive Functions
 
@@ -141,7 +141,7 @@ But that's not all, **because we have the proof, we automatically have a program
 All we need to do is translate the exact same logic into a language that a computer can run. Let's use TypeScript.
 
 ```ts
-// Let's make a type Coin which is either 3¢ and 5¢ coins.
+// Let's make a type Coin which is either a 3¢ or 5¢ coin.
 type Coin = 3 | 5;
 
 // and a function that takes an amount of at least 8¢ and returns
