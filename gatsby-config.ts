@@ -34,12 +34,12 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-image",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        "name": "pages",
-        "path": "./src/pages/"
+        name: "pages",
+        path: "./src/pages/",
       },
-      __key: "pages"
+      __key: "pages",
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -80,8 +80,8 @@ const config: GatsbyConfig = {
             resolve: `gatsby-remark-katex`,
             options: {
               // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
+              strict: `ignore`,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -100,9 +100,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-T9GL2PRK0G",
-        ],
+        trackingIds: ["G-T9GL2PRK0G"],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
         gtagConfig: {
@@ -139,14 +137,14 @@ const config: GatsbyConfig = {
             // @ts-ignore
             serialize: ({ query: { site, allMdx } }) => {
               // @ts-ignore
-              return allMdx.nodes.map(node => {
+              return allMdx.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                })
-              })
+                });
+              });
             },
             query: `
               {

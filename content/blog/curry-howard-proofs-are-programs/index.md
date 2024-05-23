@@ -66,11 +66,28 @@ In particular let's think about inductive proofs where we have something like, "
 
 The underlying logic is the same as writing a basic recursive function for an input that is above some value.
 
-|Induction Proof | Recursive Function |
-|--------|-----------------------|
-|Prove $P(a)$                  | Define the base case for a value $a$ |
-|Assume $P(k)$ is true if $k$ is any value $\geq a$. This is called the "inductive hypothesis." | Use the function `f(k)` recursively, assuming it works with any value $k$ which is $\geq a$. This is called the recursive "leap of faith." |
-|Show that if $P(k)$ is true, then $P(k+1)$ is also true | Given any input greater than $a$, the base case, write the code to show how you can combine the value of `f(k)` with something else to produce a proper result for `f(k+1)`|
+<table>
+<thead>
+  <tr>
+    <th>Induction Proof</th>
+    <th>Recursive Function</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Prove $P(a)$ </td>
+    <td>Define the base case for a value $a$</td>
+  </tr>
+  <tr>
+    <td>Assume $P(k)$ is true if $k$ is any value $\geq a$. This is called the "inductive hypothesis."</td>
+    <td>Use the function `f(k)` recursively, assuming it works with any value $k$ which is $\geq a$. This is called the recursive "leap of faith."</td>
+  </tr>
+  <tr>
+    <td>Show that if $P(k)$ is true, then $P(k+1)$ is also true </td>
+    <td>Given any input greater than $a$, the base case, write the code to show how you can combine the value of `f(k)` with something else to produce a proper result for `f(k+1)`</td>
+  </tr>
+</tbody>
+</table>
 
 For example, let's look at a very simple recursive function for computing the length of an array:
 
@@ -211,7 +228,7 @@ function replaceCoins(
 }
 ```
 
-And voila! Thanks to the Curry-Howard correspondence, we just translated our proof into a working program!
+And voila! Thanks to the Curry-Howard correspondence, we just translated our proof into a working program! Not only do we know this is possible, we can see exactly how the change is made for any given value.
 
 You can try it below and see that it works for any value of at least `8`.
 

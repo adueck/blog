@@ -66,8 +66,9 @@ details {
   margin-bottom: 1rem;
 }
 
-img, .gatsby-resp-image-wrapper {
-  margin-bottom: 1rem; 
+img,
+.gatsby-resp-image-wrapper {
+  margin-bottom: 1rem;
 }
 
 figcaption {
@@ -88,6 +89,23 @@ figcaption {
 
 .block-border {
   border: 2px solid #333;
+}
+
+table {
+  margin-bottom: 1rem;
+}
+
+td,
+th {
+  border: 1px solid black;
+}
+
+td {
+  padding: 0.5rem;
+}
+
+th {
+  padding: 0.5rem;
 }
 
 /* HTML elements */
@@ -172,16 +190,16 @@ h6 {
   font-size: var(--fontSize-1);
 }
 
-h1 > a {
+h1>a {
   color: inherit;
   text-decoration: none;
 }
 
-h2 > a,
-h3 > a,
-h4 > a,
-h5 > a,
-h6 > a {
+h2>a,
+h3>a,
+h4>a,
+h5>a,
+h6>a {
   text-decoration: none;
   color: inherit;
 }
@@ -212,7 +230,7 @@ ol li {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
 
-li > p {
+li>p {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
 
@@ -220,7 +238,7 @@ li *:last-child {
   margin-bottom: var(--spacing-0);
 }
 
-li > ul {
+li>ul {
   margin-left: var(--spacing-8);
   margin-top: calc(var(--spacing-8) / 2);
 }
@@ -236,12 +254,12 @@ blockquote {
   margin-bottom: var(--spacing-8);
 }
 
-blockquote > :last-child {
+blockquote> :last-child {
   margin-bottom: var(--spacing-0);
 }
 
-blockquote > ul,
-blockquote > ol {
+blockquote>ul,
+blockquote>ol {
   list-style-position: inside;
 }
 
@@ -361,6 +379,7 @@ a:focus {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
   }
+
   ul,
   ol {
     list-style-position: inside;
