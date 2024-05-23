@@ -229,7 +229,7 @@ function replaceCoins(
 }
 ```
 
-And voila! Thanks to the Curry-Howard correspondence, we just translated our proof into a working program! Not only do we know this is possible, we can see exactly how the change is made for any given value.
+And voila! Thanks to the Curry-Howard correspondence, we've just translated our proof into a working program! Not only do we know this is possible, we can see exactly how the change is made for any given value.
 
 You can try it below and see that it works for any value of at least `8`.
 
