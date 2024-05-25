@@ -108,7 +108,7 @@ Here we did the exact same thing as we did in the proof, just translated to Type
 
 ## Inductive Proofs and Recursive Functions
 
-There are more striking parallels when we start looking at math proofs using induction. These work exactly like recursive functions, as pointed out in [HTDP](https://htdp.org/2023-8-14/Book/part_two.html#%28part._ch~3adesign-lists%29).
+There's a more striking relationship between proofs and programs when we start looking at math proofs using induction. These work exactly like recursive functions, as pointed out in [HTDP](https://htdp.org/2023-8-14/Book/part_two.html#%28part._ch~3adesign-lists%29).
 
 In particular let's think about inductive proofs where we have something like, "For all integers $n \geq a$, a property $P(n)$ is true."
 
