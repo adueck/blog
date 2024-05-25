@@ -9,6 +9,10 @@ image: proofs-are-programs.jpg
 
 Proofs are programs, and programs are proofs. That's basically what the [Curry-Howard correspondance](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) says.
 
+Proofs can be transformed in programs, and programs can be transformed into proofs. If you have a proof, you can get a program out of it for free. If you have the right kind of program, it can become a proof. As a category theorist might say, *proofs are isomorphic to programs*.
+
+> Proofs $\cong$ Programs 
+
 ## Direct Proofs and Functions
 
 While learning about direct proofs in math, it helped me to think of a direct proof as a simple function that I was trying to write. For example, let's say we need to prove the following:
@@ -57,6 +61,50 @@ a + b
 $$
 
 Just as if we were writing a function, we took an input (in this case two odd numbers) and we "proved" that we could add these together and output an even number. The whole process felt a lot like trying to write a function that took an input and trying to manipulate the value(s) to match the return type of the function.
+
+In fact, here's what the process could look like if we did it all in TypeScript.
+
+```ts
+type Integer = number;
+
+// odd number is defined as 2x + 1
+//  where x is an Integer
+type OddNumber = {
+  coefficient: 2,
+  term: Integer,
+  constant: 1,
+}
+
+// even number is defined as 2x
+//  where x is an Integer
+type EvenNumber = {
+  coefficient: 2,
+  term: Integer,
+  constant: 0,
+}
+
+function addOdds(a: OddNumber, b: OddNumber): EvenNumber {
+  // a + b
+  // where a and b are odd numbers
+  // = (2x + 1) + (2y + 1)
+  // = 2x + 2x + 2
+  // = 2(x + y + 1)
+
+  // calculate (x + y + 1)
+  const n = (a.term + b.term + 1) as Integer;
+  // we get an integer n
+  // we can put this in the form 2n to get an even number
+  return {
+    coefficient: 2,
+    term: n,
+    constant: 0,
+  };
+}
+```
+
+[Try it on the TS Playground](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAkgdsCBzCAnKBeKcCuBbAIzQG4AoUgegqgHsATO7fI9ASwGco6IAzVuCIwCGnAEwAPKAGooARkrUoAdwAWaaJI5QhcWAmRpSoSFADyDAHLM0mKAG9SUKAGMavPs9YQEALiiiAGkcoRFQ8P3hEFFQgp1c4dmAdYD9ZIIBfciooCAA3byZCGy1uPgFhMXEFJ1V1KE1OHT0ow2NoAFF8uCsi9CwHOLceDy9ff1iQtHDmgxjg+MTkvwAGDPIeHDhnYFYaXSEGczp2AAohPyOelgCoAgvLa1QASj9O7yubAahsoWlb4OytVQ0F+OkYBG0wNoDEKLHYAOoWBOEj+sief2RIFRTwRthRMnx-lxWFEJ0kMixMjR5Cc2WcQgANs4cAyhIgoGS-pS5DjBglgNhbGcAHShPB-AiiqbY7ScSKzMi06hKaAoAVNfgtdBwXEqlxNMA4AXAFRafghNRQHg0ML+XTAGhQNXaXR5Aq4XrBYHAHCoXRfQbuViebwpcbBJxivxwCZ8xZjVbBdJkTLVAAqACUAJpQACCABF8zALABxMyFqAWACqAFkAELtDMAZSgAAlG+1SAsaAyIMKGTQkGdDgx2AB1VBCMCQVAnADMNwArE8nmQstQJ1OZ1bNttdvbHTh2NAwKzzR64aQNlsdnttCPjpvp2gztHHjc7rC0C8v+gvte9zvPAhAAawgS5HhOOA316H8IN6ewIygVgeA5XQAFJ-CgABCDAsDRRCnCIi1UBoJRsAgcj2lQUjZwAInoRgLxsYEAEccFYYE6Do1ckMyYjvV9f0kMDYZg1GMNAhEyYwj8Gs2RUYUeAHG0oO+fx0REGZoljIiFiSMY0j4xUoH4ncb33HJckZD5Z2gswHgQgAfKA3m6R4f2Yv8kMEv00OFVwgxDBAoAAKmwKUwnRGQ4ACvZ42AEyzK9CAfT8vIbMgg46COU5gLA+CWDOJ4bny8DHKKggV141MgA)
+
+Here we did the exact same thing as we did in the proof, just translated to TypeScript. And just like that, we have a working program that will add up any two odd numbers and give us an even number.
 
 ## Inductive Proofs and Recursive Functions
 
