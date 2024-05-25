@@ -9,7 +9,7 @@ image: proofs-are-programs.jpg
 
 Proofs are programs, and programs are proofs. That's basically what the [Curry-Howard correspondance](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) says.
 
-Proofs can be transformed in programs, and programs can be transformed into proofs. If you have a proof, you can get a program out of it for free. If you have the right kind of program, it can become a proof. As a category theorist might say, *proofs are isomorphic to programs*.
+Proofs can be transformed in programs, and programs can be transformed into proofs. If you have a proof, you can get a program out of it for free. If you have the right kind of program, it also servers as a proof. As a category theorist might say, *proofs are isomorphic to programs*.
 
 > Proofs $\cong$ Programs 
 
