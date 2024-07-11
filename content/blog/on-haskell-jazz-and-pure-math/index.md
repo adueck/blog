@@ -37,7 +37,7 @@ Haskell programmers and CS academics play around with the possibilities of how t
 
 They can all push the limits in these areas beacause they’re not constrained by being practical, popular, or useful. And in this process, they do discover extremely powerful, beautiful things.
 
-![Thumbnail for video of Simon Peyton Jones saying Haskell is useless](./haskell-is-useless-thumbnail.png)
+[![Thumbnail for video of Simon Peyton Jones saying Haskell is useless](./haskell-is-useless-thumbnail.png)](https://www.youtube.com/watch?v=iSmkqocn0oQ)
 
 In his classic book [An Introduction to Mathematics](https://www.gutenberg.org/ebooks/41568), Alfred North Whitehead argues with all kinds of fascinating examples that those who pursued theoretical ideas for their own sake end up making far more practical advances than those stuck to the practical, immediately useful stuff.
 
