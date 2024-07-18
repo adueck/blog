@@ -39,7 +39,7 @@ They can all push the limits in these areas beacause they’re not constrained b
 
 [![Thumbnail for video of Simon Peyton Jones saying Haskell is useless](./haskell-is-useless-thumbnail.png)](https://www.youtube.com/watch?v=iSmkqocn0oQ)
 
-In his classic book [An Introduction to Mathematics](https://www.gutenberg.org/ebooks/41568), Alfred North Whitehead argues with all kinds of fascinating examples that those who pursued theoretical ideas for their own sake end up making far more practical advances than those stuck to the practical, immediately useful stuff.
+In his classic book [An Introduction to Mathematics](https://www.gutenberg.org/ebooks/41568), Alfred North Whitehead argues with all kinds of fascinating examples that those who pursued theoretical ideas for their own sake end up making far more practical advances than those who stuck to the practical, immediately useful stuff.
 
 Whitehead explains how Machael Faraday discovered the laws of induction between currents and magnets back in 1831-32. *"What is the use of this discovery?"* someone asked. *"What's the use of child--it grows to be a man,"* he responded. To quote Whitehead, "Faraday's child has grown to be a man and is now the basis of all the modern applications of electricity."
 
