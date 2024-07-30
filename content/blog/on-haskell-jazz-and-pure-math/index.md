@@ -31,11 +31,15 @@ People used to scoff at strong static typing and algebraic data types. “Why wo
 
 Some of the sounds that people experiment with in the most avant-garde music become often used and well loved in more popular music. Added 9th chords and stacked fifths are now ubiquitous in mainstream pop music. [Tritone substitutions](https://jazz-library.com/articles/tritone-substitution) are a based on a sort of mathematical theory trick cooked up by classical and jazz musicians. Now they are commonplace in popular R&B, soul, and gospel music. These little snippets of grating harmonies might have seemed strange, artificial and inaccessible at a time. But they end up becoming like a common spice that gives everyone the stank face or make them smile with delight.
 
-What a hundred years ago was seemed like the most extreme mental acrobatics of a few crazy mathmeticians has become elementary and entry level in practical engineering courses. It turns out these mathematical techniques can be used to explain things in the real world and make everyday products we all use and enjoy. 
+What a hundred years ago was seemed like the most extreme mental acrobatics of a few crazy mathmeticians has become elementary and entry level in practical engineering courses. It turns out these mathematical techniques can be used to explain things in the real world and make everyday products we all use and enjoy.
 
 Haskell programmers and CS academics play around with the possibilities of how things can be computed. Jazz musicians play around with sound and the feelings that different scales, harmonies and rythms can give us. Pure mathmeticians play around with imaginary objects and abstractions to find structure and patterns.
 
 They can all push the limits in these areas beacause they’re not constrained by being practical, popular, or useful. And in this process, they do discover extremely powerful, beautiful things.
+
+> "The truths used in physics are derived--often in greater generality and power than is necessary for applications--by pure mathematicians." [Amir D. Aczel](https://www.amazon.com/Why-Science-Does-Not-Disprove/dp/006223059X)
+
+We could something similar about Haskellers to what Aczel said about pure mathematicians. **Haskellers create ideas and patterns (often in greater generality and power than is necassary for applications)** that are used to drive software development forward.    
 
 [![Thumbnail for video of Simon Peyton Jones saying Haskell is useless](./haskell-is-useless-thumbnail.png)](https://www.youtube.com/watch?v=iSmkqocn0oQ)
 
