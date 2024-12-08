@@ -5,7 +5,7 @@ description: "All three of these things get a lot of hate for being elitist, obs
 image: ./stew.png
 ---
 
-All three of these things get a lot of hate for being elitist, obscure, irrelevant, painful, and useless. But are they?
+All three of these things get a lot of flack for being elitist, obscure, irrelevant, painful, and useless. But are they?
 
 They all have a huge barrier to entry. Beacause they are so “hard” only a few people persevere enough to really “get into” them. See [coding in haskell until I rage quit](https://www.youtube.com/watch?v=dNi__BckudQ) for a funny example of this. What’s the point in torturing ourselves trying to learn these things or getting lost in these rabbit-holes inhabited by arrogant elites?
 
@@ -13,7 +13,7 @@ These endeavors are often considered a waste of time. Their practicioners seem t
 
 Haskell and functional programmers write needlessly intricate code exercises [just to publish papers](https://www.youtube.com/watch?v=dNi__BckudQ), they say. Jazz musicians play weird music that nobody listens to. They practice endlessly just to impress other musicians with their tricks. Pure mathmeticians devote their life to insane puzzles that have no relevance to anything remotely useful.
 
-> "Imperative programming is literally fuelling the world. I would even say that imperative programming is the only kind of programming that exists. Everything else is just _toys for academics to play with_." Tsoding [on the Superiority of Imperative Programming](https://youtu.be/V-o1cKaWOQc?si=IUNFOpuY7YG_SGfK&t=3205)
+> "Imperative programming is literally fuelling the world. I would even say that imperative programming is the only kind of programming that exists. Everything else is just _toys for academics to play with_." Tsoding (probably half-joking) [on the Superiority of Imperative Programming](https://youtu.be/V-o1cKaWOQc?si=IUNFOpuY7YG_SGfK&t=3205)
 
 Haskell is just ‘code for coders’. Jazz is just ‘music for musicians.’ Pure math is just ‘math for mathematicians.’ It’s all a useless cyclical exercise that doesn’t bring any value to the real world.
 
@@ -39,17 +39,17 @@ They can all push the limits in these areas beacause they’re not constrained b
 
 > "The truths used in physics are derived--often in greater generality and power than is necessary for applications--by pure mathematicians." [Amir D. Aczel](https://www.amazon.com/Why-Science-Does-Not-Disprove/dp/006223059X)
 
-We could something similar about Haskellers to what Aczel said about pure mathematicians. **Haskellers create ideas and patterns (often in greater generality and power than is necassary for applications)** that are used to drive software development forward.    
+We could something similar about Haskellers to what Aczel said about pure mathematicians. **Haskellers create ideas and patterns (often in greater generality and power than is necassary for applications)** that are used to drive software development forward.
 
 [![Thumbnail for video of Simon Peyton Jones saying Haskell is useless](./haskell-is-useless-thumbnail.png)](https://www.youtube.com/watch?v=iSmkqocn0oQ)
 
 In his classic book [An Introduction to Mathematics](https://www.gutenberg.org/ebooks/41568), Alfred North Whitehead argues with all kinds of fascinating examples that those who pursued theoretical ideas for their own sake end up making far more practical advances than those who stuck to the practical, immediately useful stuff.
 
-Whitehead explains how Machael Faraday discovered the laws of induction between currents and magnets back in 1831-32. *"What is the use of this discovery?"* someone asked. *"What's the use of child--it grows to be a man,"* he responded. To quote Whitehead, "Faraday's child has grown to be a man and is now the basis of all the modern applications of electricity."
+Whitehead explains how Machael Faraday discovered the laws of induction between currents and magnets back in 1831-32. _"What is the use of this discovery?"_ someone asked. _"What's the use of child--it grows to be a man,"_ he responded. To quote Whitehead, "Faraday's child has grown to be a man and is now the basis of all the modern applications of electricity."
 
 Today practically minded programmers may ask, "What's the use of monads?" "What's the point of experimenting with dependent types in Agda?"
 
-If everyone was stuck coding popular apps in the most popular languages, our mainstream programming languages would suck much more. Our apps would be buggier and a lot harder to make. 
+If everyone was stuck coding popular apps in the most popular languages, our mainstream programming languages would suck much more. Our apps would be buggier and a lot harder to make.
 
 If everyone was just playing the most popular music out there that everyone wanted to hear, we wouldn’t get some of the sweet harmonies and rhythms in popular music that tickle the average ear and move hearts.
 
@@ -58,4 +58,3 @@ If everyone was stuck doing “useful math” to solve everyday problems, we wou
 So let’s not hate the Haskell programmers, jazz musicians, and pure mathmeticians. Let’s show them some love and be thankful for the great stuff that they’re busy cooking up.
 
 And don’t be afraid to venture into these “highbrow” spheres and explore. It may seem useless and painful at first. It may seem like a waste of time. But try setting aside the need for everything to be “practical” and “useful.” Enjoy whatever you can in the playgrounds of ideas. Who knows what you might discover, and what massive practical value you might get from it.
-
