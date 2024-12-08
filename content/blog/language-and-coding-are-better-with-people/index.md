@@ -1,5 +1,5 @@
 ---
-title: "Programming and Language Learning Are Exponentially Better When Connected With People"
+title: "Programming and Language Learning Are Exponentially Better With Other People"
 date: "2024-12-08"
 image: "./fusion.jpg"
 description: "I'm not saying that pair programming or team coding is better. I'm a solo coder. I'm not saying that group language learning is better. I do most of my language studies completely alone. What I mean is that..."
