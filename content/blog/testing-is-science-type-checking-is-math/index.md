@@ -23,20 +23,20 @@ Karl Popper argued that scientific theories can never be proven, they can only b
   <thead>
     <tr>
       <th></th>
-      <th>Empirical Science</th>
       <th>Software Development</th>
+      <th>Empirical Science</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>uses</td>
-      <td>experiments</td>
       <td>tests</td>
+      <td>experiments</td>
     </tr>
     <tr>
       <td>to find</td>
-      <td>when a theory is wrong</td>
       <td>bugs</td>
+      <td>when a theory is wrong</td>
     </tr>
   </tbody>
 </table>
