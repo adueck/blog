@@ -4,7 +4,7 @@ image: no-wifi.jpg
 date: "2023-02-02"
 ---
 
-[PWA](https://web.dev/progressive-web-apps)s (Progressive Web Apps) are great. They let you make any website into an app that can be installed and used across different platforms and devices.  
+[PWA](https://web.dev/progressive-web-apps)s (Progressive Web Apps) are great. They let you make any website into an app that can be installed and used across different platforms and devices.
 
 Especially with SPA (Single-page applications), we can use service workers to **make a totally self-contained, offline-available app**, that people can access offline, whether they're visiting the site again without internet or they've installed it as an app on their phone.
 
@@ -19,7 +19,7 @@ However, when we try to do this we run into a couple of problems:
 - Service workers are complicated and full of pitfalls
 - Many of PWA plugins for a lot of frameworks **don't actually make everything offline by default**.
 
-As I've made PWAs, I've been a bit frustrated at times how difficult it can be to get everything available offline. [`gatsby-plugin-offline`](https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/#available-options) will only cache pages/routes once a user visits them, but allow you to specify which pages to pre-cache, `next-pwa` takes [a *lot* of work](https://dev.to/sfiquet/precaching-pages-with-next-pwa-31f2) to get the app the work offline.
+As I've made PWAs, I've been a bit frustrated at times how difficult it can be to get everything available offline. [`gatsby-plugin-offline`](https://www.gatsbyjs.com/plugins/gatsby-plugin-offline/#available-options) will only cache pages/routes once a user visits them, but allow you to specify which pages to pre-cache, `next-pwa` takes [a _lot_ of work](https://dev.to/sfiquet/precaching-pages-with-next-pwa-31f2) to get the app the work offline.
 
 In the past I've used [Create React App](https://create-react-app.dev/) to make SPA React applications that just worked and were totally available offline. But unfortunately they [took out the built-in service worker](https://github.com/facebook/create-react-app/issues/9776), and now it [seems to be abandoned](https://github.com/facebook/create-react-app/issues/11770#issuecomment-1397342797). So I've moved over to using [Vite](https://vitejs.dev/) and I'm really happy with it!
 
@@ -50,10 +50,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    VitePWA(),
-  ],
+  plugins: [react(), VitePWA()],
 });
 ```
 
@@ -113,9 +110,11 @@ Now you should have a working, installable PWA! But there's one problem. If you 
 ```tsx
 import myImage from "./my-image.svg";
 
-export default () => <div>
+export default () => (
+  <div>
     <img src={myImage} />
-</div>;
+  </div>
+);
 ```
 
 You'll find the images aren't cached. Again, some people may not want to cache everything, but for us, we're trying to make an application that's **fully cached, fully offline-available**.
@@ -178,7 +177,7 @@ export default defineConfig({
 });
 ```
 
-If you don't want to cache absolutely *everything* (you might have some big audio or video files), you can adjust the globs accordingly.
+If you don't want to cache absolutely _everything_ (you might have some big audio or video files), you can adjust the globs accordingly.
 
 There you go! Now you can build your game, educational tool, docs site, or whatever you want and serve it as an installable, totally offline-available app.
 
@@ -192,10 +191,10 @@ To do this, we can add a bit of code in `main.tsx`
 
 ```tsx
 // /main.tsx
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
 import { registerSW } from "virtual:pwa-register";
 
 // add this to prompt for a refresh
@@ -207,10 +206,10 @@ const updateSW = registerSW({
   },
 });
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 ```
 
@@ -232,6 +231,12 @@ To fix this and let us use the virtual module we need to update `tsconfig.json` 
     ]
   },
 }
+```
+
+Alternatively, as pointed out by [José Gonçalves](https://github.com/joego), you can add the following line to `vite-env.d.ts`:
+
+```ts
+/// <reference types="vite-plugin-pwa/client" />
 ```
 
 Now you have a fully-offline app that will prompt the user to update whenever a new version is available.
