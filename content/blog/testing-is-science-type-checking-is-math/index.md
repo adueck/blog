@@ -81,6 +81,12 @@ With these advanced type systems, you can do so much more than just make sure a 
 
 It's wonderful to see how mainstream programming languages are benefitting more and more from type checking. It's great to see how we don't always need to rely on empirical testing, but can also build things out, knowing they are correct by automatic deduction and logic. But it is not always easy or feasible to have 100% sound, type-checked programs. Usually a lot of stuff we build isn't perfectly typed and proven. And so we still need to run a lot of tests to try to find the mistakes in what we're building.
 
-### Testing does not replace type checking
+### Testing does not replace type-checking
 
-I think it's foolish to say that testing can replace type checking. Would scientists ever say that experiments can replace the need for math and formulas? Of course not. Any good scientist would reach for as much math as he can to try to make sense of what is going on.
+Does science replace math? Would scientists ever say that experiments can replace the need for math and formulas? Of course not. In the same way testing doesn't replace type-checking. Any good scientist would reach for as much math as he can to try to make sense of what is going on. In the same way, any good programmer will use the logic of type theory to see if their program lines up. Some might do that informally in their head, using a dynamic language. Others rely on the automatic rigor of a type-checker.
+
+### Use math and science / types and Ttsting
+
+When trying to solve problems in the world, people will use as much math as possible to try to make sure that things line up. But there are lots of places where we're not sure how to apply the math, or we don't know exactly what's going on. And then people need scientific experiments. Then, just to make sure that their math was correct, people probably need to do some more experiments.
+
+In the same way, as far as possible, use types to reason about how a program works and guarantee that it is correct. And where you can't get types to reach that far, use testing to try to get _closer_ to a bug-free program. And just to make sure, probably use more tests to cover as much as you can.
