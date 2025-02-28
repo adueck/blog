@@ -7,9 +7,9 @@ description: ""
 
 ![testing is science, and type checking is math](./testing-and-type-checking.jpg)
 
-Testing software is like empirical science. You run experiments to see if there's something wrong with a theory or a program. Based on observations of certain behaviors you theorize that things are working correctly.
+Testing software is like empirical science. You run experiments to see if there's something wrong with a program.
 
-Type-checking software is like math. You use cold, hard deductive logic to say if something is true or not.
+Type-checking software is like math. You use cold, hard deductive logic to say if something is correct or not.
 
 ## Science uses tests
 
@@ -77,7 +77,7 @@ But type checking does something much more incredible. It allows us to build out
 
 Of course, this is only true if the type system is _sound_ and _complete_. The popular type systems mentioned above do NOT cover everything, and they are NOT fool-proof. Althought these type-systems will cover a lot of things in your code, you can still make errors and break things without being warned by the type system. But people are working on better, more complete systems, using dependant and linear types. With these sound, complete systems, people can be sure that the entire program is logically, 100% correct.
 
-With these advanced type systems, you can do so much more than just make sure a certain variable is a `String` or an `Int`. You can make sure that the _entire_ algorithm is 100%, logically sound. Uncle Bob [was wrong to say](https://blog.cleancoder.com/uncle-bob/2017/01/13/TypesAndTests.html#:~:text=The%20correctness%20of%20your%20type%20model%20has%20no%20bearing%20on%20the%20correctness%20of%20the%20behavior%20you%20have%20specified.) that "The correctness of your type model has no bearing on the correctness of the behavior you have specified." With more advanced type systems, you can type the behavior as well.
+With these advanced type systems, you can do so much more than just make sure a certain variable is a `String` or an `Int`. You can make sure that the _entire_ algorithm is 100%, logically sound. Uncle Bob [was wrong to say](https://blog.cleancoder.com/uncle-bob/2017/01/13/TypesAndTests.html#:~:text=The%20correctness%20of%20your%20type%20model%20has%20no%20bearing%20on%20the%20correctness%20of%20the%20behavior%20you%20have%20specified.) that "The correctness of your type model has no bearing on the correctness of the behavior you have specified." The more rigorous the type model, the more it will ensure correct behavior. And with more advanced type systems and things like dependant types, you _can_ type the behavior for a lot of things as well.
 
 It's wonderful to see how mainstream programming languages are benefitting more and more from type checking. It's great to see how we don't always need to rely on empirical testing, but can also build things out, knowing they are correct by automatic deduction and logic. But it is not always easy or feasible to have 100% sound, type-checked programs. Usually a lot of stuff we build isn't perfectly typed and proven. And so we still need to run a lot of tests to try to find the mistakes in what we're building.
 
