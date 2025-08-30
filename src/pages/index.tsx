@@ -14,7 +14,7 @@ const IndexPage: React.FC<PageProps<Queries.IndexPageQuery>> = ({
   // const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMdx.nodes;
 
-  return <Layout location={location}> 
+  return <Layout location={location}>
     <div style={{ marginTop: "3rem", marginBottom: "4rem" }}>
       {posts.map(post => {
         const title = post.frontmatter?.title || post.fields?.slug
@@ -56,7 +56,7 @@ export const query = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
         excerpt
         fields {

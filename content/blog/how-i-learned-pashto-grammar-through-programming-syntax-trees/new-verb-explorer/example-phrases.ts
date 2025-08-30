@@ -1,285 +1,832 @@
-import {
-    Types as T,
-} from "@lingdocs/ps-react";
+import { Types as T } from "@lingdocs/pashto-inflector";
 
 export const examplesVPs: {
-    e: string,
-    vp: T.VPSelectionState,
+  e: string;
+  vp: T.VPSelectionState;
 }[] = [
-    {
-        e: "The old woman saw me",
-        vp: {"blocks":[{"key":0.6268927060029541,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"noun","entry":{"ts":1527812797,"i":8883,"p":"ښځه","f":"xúdza","g":"xudza","e":"woman, wife","r":4,"c":"n. f.","ec":"woman","ep":"women"},"gender":"fem","genderCanChange":false,"number":"singular","numberCanChange":true,"adjectives":[]}}}},{"key":0.37194612848188546,"block":{"type":"objectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":0,"distance":"far"}}}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527812275,"i":11967,"p":"لیدل","f":"leedul","g":"leedul","e":"to see","r":4,"c":"v. trans./gramm. trans.","psp":"وین","psf":"ween","tppp":"لید","tppf":"leed","ec":"see,sees,seeing,saw,seen"}},"verbTense":"perfectivePast","perfectTense":"wouldHaveBeenPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"basic","transitivity":"transitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":true,"canChangeVoice":true,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "You see me",
-        vp: {"blocks":[{"key":0.6268927060029541,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":2,"distance":"far"}}}},{"key":0.37194612848188546,"block":{"type":"objectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":0,"distance":"far"}}}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527812275,"i":11967,"p":"لیدل","f":"leedul","g":"leedul","e":"to see","r":4,"c":"v. trans./gramm. trans.","psp":"وین","psf":"ween","tppp":"لید","tppf":"leed","ec":"see,sees,seeing,saw,seen"}},"verbTense":"presentVerb","perfectTense":"wouldHaveBeenPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"basic","transitivity":"transitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":true,"canChangeVoice":true,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "The (female) child was hitting me",
-        vp: {"blocks":[{"key":0.2081321811256851,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"noun","entry":{"ts":1527812881,"i":12071,"p":"ماشوم","f":"maashoom","g":"maashoom","e":"child, kid","r":4,"c":"n. m. anim. unisex","ec":"child","ep":"children"},"gender":"fem","genderCanChange":true,"number":"singular","numberCanChange":true,"adjectives":[]}}}},{"key":0.7664662671253917,"block":{"type":"objectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":0,"distance":"far"}}}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527815399,"i":14943,"p":"وهل","f":"wahul","g":"wahul","e":"to hit","r":4,"c":"v. trans.","tppp":"واهه","tppf":"waahu","ec":"hit,hits,hitting,hit,hit"}},"verbTense":"imperfectivePast","perfectTense":"wouldHaveBeenPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"basic","transitivity":"transitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":false,"canChangeVoice":true,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "We are speaking",
-        vp: {"blocks":[{"key":0.6543457932051306,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":6,"distance":"far"}}}},{"key":0.2431098840484196,"block":{"type":"objectSelection","selection":"none"}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527813680,"i":9512,"p":"غږېدل","f":"ghuGedul, ghaGedul","g":"ghugedul,ghagedul","e":"to speak, talk, converse, sing","r":4,"c":"v. intrans.","ec":"speak,speaks,speaking,spoke,spoken"}},"verbTense":"presentVerb","perfectTense":"pastPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"basic","transitivity":"intransitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":false,"canChangeVoice":false,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "I have eaten potatoes",
-        vp: {"blocks":[{"key":0.14308049731439665,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":1,"distance":"far"}}}},{"key":0.14094061502332544,"block":{"type":"objectSelection","selection":{"type":"NP","selection":{"type":"noun","entry":{"ts":1527820648,"i":807,"p":"الو","f":"aloo","g":"aloo","e":"potato","r":4,"c":"n. m.","ppp":"الوګان","ppf":"aloogáan"},"gender":"masc","genderCanChange":false,"number":"plural","numberCanChange":true,"adjectives":[]}}}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527812790,"i":5960,"p":"خوړل","f":"khoRul","g":"khoRul","e":"to eat, to bite","r":4,"c":"v. trans.","psp":"خور","psf":"khor","tppp":"خوړ","tppf":"khoR","ec":"eat,eats,eating,ate,eaten"}},"verbTense":"imperfectivePast","perfectTense":"presentPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"perfect","transitivity":"transitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":false,"canChangeVoice":true,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "I will go",
-        vp: {"blocks":[{"key":0.18531725731443727,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":0,"distance":"far"}}}},{"key":0.9854835460803812,"block":{"type":"objectSelection","selection":"none"}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527815348,"i":3768,"p":"تلل","f":"tlul","g":"tlul","e":"to go","r":4,"c":"v. intrans.","psp":"ځ","psf":"dz","ssp":"لاړ ش","ssf":"láaR sh","prp":"لاړ","prf":"láaR","ec":"go,goes,going,went,gone"}},"verbTense":"imperfectiveFuture","perfectTense":"pastPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"basic","transitivity":"intransitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":false,"canChangeVoice":false,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "He had seen you",
-        vp: {"blocks":[{"key":0.11976135392699705,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":4,"distance":"far"}}}},{"key":0.391909682531026,"block":{"type":"objectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":2,"distance":"far"}}}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527812275,"i":11967,"p":"لیدل","f":"leedul","g":"leedul","e":"to see","r":4,"c":"v. trans./gramm. trans.","psp":"وین","psf":"ween","tppp":"لید","tppf":"leed","ec":"see,sees,seeing,saw,seen"}},"verbTense":"imperfectivePast","perfectTense":"pastPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"perfect","transitivity":"transitive","isCompound":false,"voice":"active","negative":false,"canChangeTransitivity":true,"canChangeVoice":true,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-    {
-        e: "I'm learning Pashto",
-        vp: {"blocks":[{"key":0.9346471543028234,"block":{"type":"subjectSelection","selection":{"type":"NP","selection":{"type":"pronoun","person":0,"distance":"far"}}}},{"key":0.9845575699028086,"block":{"type":"objectSelection","selection":{"type":"NP","selection":{"type":"noun","entry":{"ts":1527816016,"i":2582,"p":"پښتو","f":"puxto","g":"puxto","e":"Pashto, Pashtunwali","r":4,"c":"n. f.","ec":"Pashto"},"gender":"fem","genderCanChange":false,"number":"singular","numberCanChange":true,"adjectives":[]}}}}],"verb":{"type":"verb","verb":{"entry":{"ts":1527815444,"i":7289,"p":"زده کول","f":"zda kawul","g":"zdakawul","e":"to learn, to teach","r":4,"c":"v. stat. comp. trans.","l":1527818939,"ec":"learn"},"complement":{"ts":1527818939,"i":7285,"p":"زده","f":"zda","g":"zda","e":"learned, mastered, grasped, learned by heart","r":4,"c":"adj."}},"verbTense":"presentVerb","perfectTense":"pastPerfect","imperativeTense":"perfectiveImperative","tenseCategory":"basic","transitivity":"transitive","isCompound":"stative","voice":"active","negative":false,"canChangeTransitivity":false,"canChangeVoice":true,"canChangeStatDyn":false},"form":{"removeKing":false,"shrinkServant":false}},
-    },
-];
-
-export const exampleNPs: {
-    e: string,
-    np: T.NPSelection,
-}[] = [
-    {
-        e: "old book",
-        np: {
-            type: "NP",
+  {
+    e: "The old woman saw me",
+    vp: {
+      blocks: [
+        {
+          key: 0.6268927060029541,
+          block: {
+            type: "subjectSelection",
             selection: {
+              type: "NP",
+              selection: {
                 type: "noun",
-                entry: {"ts":1527812817,"i":9999,"p":"کتاب","f":"kitáab","g":"kitaab","e":"book","c":"n. m."} as T.NounEntry,
-                gender: "masc",
+                entry: {
+                  ts: 1527812797,
+                  i: 8883,
+                  p: "ښځه",
+                  f: "xúdza",
+                  g: "xudza",
+                  e: "woman, wife",
+                  r: 4,
+                  c: "n. f.",
+                  ec: "woman",
+                  ep: "women",
+                } as T.NounEntry,
+                gender: "fem",
                 genderCanChange: false,
                 number: "singular",
                 numberCanChange: true,
-                adjectives: [{
-                    type: "adjective",
-                    entry: {"ts":1527815451,"i":7245,"p":"زوړ","f":"zoR","g":"zoR","e":"old","c":"adj. irreg.","infap":"زاړه","infaf":"zaaRu","infbp":"زړ","infbf":"zaR"} as T.AdjectiveEntry,
-                    sandwich: undefined,
-                }],
                 possesor: undefined,
-                demonstrative: undefined,
-            }
-        },
-    },
-    {
-        e: "Your friend's father",
-        np: {
-            "type": "NP",
-            "selection": {
-                "type": "noun",
-                "entry": {
-                    "ts": 1527815177,
-                    "i": 2612,
-                    "p": "پلار",
-                    "f": "plaar",
-                    "g": "plaar",
-                    "e": "father",
-                    "r": 4,
-                    "c": "n. m. anim.",
-                    "ppp": "پلرونه",
-                    "ppf": "plaróona"
-                },
-                "gender": "masc",
-                "genderCanChange": false,
-                "number": "singular",
-                "numberCanChange": true,
-                "adjectives": [],
-                "possesor": {
-                    "np": {
-                        "type": "NP",
-                        "selection": {
-                            "type": "noun",
-                            "entry": {
-                                "ts": 1527814159,
-                                "i": 13131,
-                                "p": "ملګری",
-                                "f": "malgúrey",
-                                "g": "malgurey",
-                                "e": "friend, companion",
-                                "r": 4,
-                                "c": "n. m. anim. unisex"
-                            },
-                            "gender": "masc",
-                            "genderCanChange": true,
-                            "number": "singular",
-                            "numberCanChange": true,
-                            "adjectives": [],
-                            "possesor": {
-                                "np": {
-                                    "type": "NP",
-                                    "selection": {
-                                        "type": "pronoun",
-                                        "person": 2,
-                                        "distance": "far"
-                                    }
-                                },
-                                "shrunken": false
-                            }
-                        }
-                    },
-                    "shrunken": false
-                }
+                adjectives: [],
+              },
             },
+          },
         },
+        {
+          key: 0.37194612848188546,
+          block: {
+            type: "objectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 0, distance: "far" },
+            },
+          },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527812275,
+            i: 11967,
+            p: "لیدل",
+            f: "leedul",
+            g: "leedul",
+            e: "to see",
+            r: 4,
+            c: "v. trans./gramm. trans.",
+            psp: "وین",
+            psf: "ween",
+            tppp: "لید",
+            tppf: "leed",
+            ec: "see,sees,seeing,saw,seen",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "perfectivePast",
+        perfectTense: "wouldHaveBeenPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "basic",
+        transitivity: "transitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: true,
+        canChangeVoice: true,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
     },
-    {
-        e: "the sweet children (f.)",
-        np: {
-            "type": "NP",
-            "selection": {
-                "type": "noun",
-                "entry": {
-                    "ts": 1527812881,
-                    "i": 12071,
-                    "p": "ماشوم",
-                    "f": "maashoom",
-                    "g": "maashoom",
-                    "e": "child, kid",
-                    "r": 4,
-                    "c": "n. m. anim. unisex",
-                    "ec": "child",
-                    "ep": "children"
-                },
-                "gender": "fem",
-                "genderCanChange": true,
-                "number": "plural",
-                "numberCanChange": true,
-                "adjectives": [
-                    {
-                        "type": "adjective",
-                        "entry": {
-                            "ts": 1574865652928,
-                            "i": 5967,
-                            "p": "خوږ",
-                            "f": "khoG",
-                            "g": "khog",
-                            "e": "sweet, nice",
-                            "r": 4,
-                            "c": "adj.",
-                            "infap": "خواږه",
-                            "infaf": "khwaaGu",
-                            "infbp": "خوږ",
-                            "infbf": "khwaG"
-                        }
-                    }
-                ]
-            }
+  },
+  {
+    e: "You see me",
+    vp: {
+      blocks: [
+        {
+          key: 0.6268927060029541,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 2, distance: "far" },
+            },
+          },
         },
+        {
+          key: 0.37194612848188546,
+          block: {
+            type: "objectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 0, distance: "far" },
+            },
+          },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527812275,
+            i: 11967,
+            p: "لیدل",
+            f: "leedul",
+            g: "leedul",
+            e: "to see",
+            r: 4,
+            c: "v. trans./gramm. trans.",
+            psp: "وین",
+            psf: "ween",
+            tppp: "لید",
+            tppf: "leed",
+            ec: "see,sees,seeing,saw,seen",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "presentVerb",
+        perfectTense: "wouldHaveBeenPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "basic",
+        transitivity: "transitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: true,
+        canChangeVoice: true,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
     },
-    {
-        e: "the sweet children (m.)",
-        np: {
-            "type": "NP",
-            "selection": {
-                "type": "noun",
-                "entry": {
-                    "ts": 1527812881,
-                    "i": 12071,
-                    "p": "ماشوم",
-                    "f": "maashoom",
-                    "g": "maashoom",
-                    "e": "child, kid",
-                    "r": 4,
-                    "c": "n. m. anim. unisex",
-                    "ec": "child",
-                    "ep": "children"
-                },
-                "gender": "masc",
-                "genderCanChange": true,
-                "number": "plural",
-                "numberCanChange": true,
-                "adjectives": [
-                    {
-                        "type": "adjective",
-                        "entry": {
-                            "ts": 1574865652928,
-                            "i": 5967,
-                            "p": "خوږ",
-                            "f": "khoG",
-                            "g": "khog",
-                            "e": "sweet, nice",
-                            "r": 4,
-                            "c": "adj.",
-                            "infap": "خواږه",
-                            "infaf": "khwaaGu",
-                            "infbp": "خوږ",
-                            "infbf": "khwaG"
-                        }
-                    }
-                ]
-            }
+  },
+  {
+    e: "The (female) child was hitting me",
+    vp: {
+      blocks: [
+        {
+          key: 0.2081321811256851,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: {
+                type: "noun",
+                entry: {
+                  ts: 1527812881,
+                  i: 12071,
+                  p: "ماشوم",
+                  f: "maashoom",
+                  g: "maashoom",
+                  e: "child, kid",
+                  r: 4,
+                  c: "n. m. anim. unisex",
+                  ec: "child",
+                  ep: "children",
+                } as T.NounEntry,
+                gender: "fem",
+                genderCanChange: true,
+                number: "singular",
+                numberCanChange: true,
+                possesor: undefined,
+                adjectives: [],
+              },
+            },
+          },
         },
+        {
+          key: 0.7664662671253917,
+          block: {
+            type: "objectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 0, distance: "far" },
+            },
+          },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527815399,
+            i: 14943,
+            p: "وهل",
+            f: "wahul",
+            g: "wahul",
+            e: "to hit",
+            r: 4,
+            c: "v. trans.",
+            tppp: "واهه",
+            tppf: "waahu",
+            ec: "hit,hits,hitting,hit,hit",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "imperfectivePast",
+        perfectTense: "wouldHaveBeenPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "basic",
+        transitivity: "transitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: false,
+        canChangeVoice: true,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
     },
-    {
-        e: "the tired man's guests",
-        np: {
-            "type": "NP",
-            "selection": {
-                "type": "noun",
-                "entry": {
-                    "ts": 1527812908,
-                    "i": 13527,
-                    "p": "مېلمه",
-                    "f": "melma",
-                    "g": "melma",
-                    "e": "guest",
-                    "r": 4,
-                    "c": "n. m.  unisex",
-                    "infap": "مېلمانه",
-                    "infaf": "melmaanu",
-                    "infbp": "مېلمن",
-                    "infbf": "melman"
-                },
-                "gender": "masc",
-                "genderCanChange": true,
-                "number": "plural",
-                "numberCanChange": true,
-                "adjectives": [],
-                "possesor": {
-                    "np": {
-                        "type": "NP",
-                        "selection": {
-                            "type": "noun",
-                            "entry": {
-                                "ts": 1527815251,
-                                "i": 8039,
-                                "p": "سړی",
-                                "f": "saRéy",
-                                "g": "saRey",
-                                "e": "man",
-                                "r": 4,
-                                "c": "n. m.",
-                                "ec": "man",
-                                "ep": "men"
-                            },
-                            "gender": "masc",
-                            "genderCanChange": false,
-                            "number": "singular",
-                            "numberCanChange": true,
-                            "adjectives": [
-                                {
-                                    "type": "adjective",
-                                    "entry": {
-                                        "ts": 1527815306,
-                                        "i": 7815,
-                                        "p": "ستړی",
-                                        "f": "stúRey",
-                                        "g": "stuRey",
-                                        "e": "tired",
-                                        "r": 4,
-                                        "c": "adj. / adv."
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "shrunken": false
-                }
-            }
+  },
+  {
+    e: "We are speaking",
+    vp: {
+      blocks: [
+        {
+          key: 0.6543457932051306,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 6, distance: "far" },
+            },
+          },
         },
-    }
+        {
+          key: 0.2431098840484196,
+          block: { type: "objectSelection", selection: "none" },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527813680,
+            i: 9512,
+            p: "غږېدل",
+            f: "ghuGedul, ghaGedul",
+            g: "ghugedul,ghagedul",
+            e: "to speak, talk, converse, sing",
+            r: 4,
+            c: "v. intrans.",
+            ec: "speak,speaks,speaking,spoke,spoken",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "presentVerb",
+        perfectTense: "pastPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "basic",
+        transitivity: "intransitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: false,
+        canChangeVoice: false,
+        canChangeStatDyn: false,
+      },
+      form: { removeKing: false, shrinkServant: false },
+      externalComplement: undefined,
+    },
+  },
+  {
+    e: "I have eaten potatoes",
+    vp: {
+      blocks: [
+        {
+          key: 0.14308049731439665,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 1, distance: "far" },
+            },
+          },
+        },
+        {
+          key: 0.14094061502332544,
+          block: {
+            type: "objectSelection",
+            selection: {
+              type: "NP",
+              selection: {
+                type: "noun",
+                entry: {
+                  ts: 1527820648,
+                  i: 807,
+                  p: "الو",
+                  f: "aloo",
+                  g: "aloo",
+                  e: "potato",
+                  r: 4,
+                  c: "n. m.",
+                  ppp: "الوګان",
+                  ppf: "aloogáan",
+                } as T.NounEntry,
+                gender: "masc",
+                possesor: undefined,
+                genderCanChange: false,
+                number: "plural",
+                numberCanChange: true,
+                adjectives: [],
+              },
+            },
+          },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527812790,
+            i: 5960,
+            p: "خوړل",
+            f: "khoRul",
+            g: "khoRul",
+            e: "to eat, to bite",
+            r: 4,
+            c: "v. trans.",
+            psp: "خور",
+            psf: "khor",
+            tppp: "خوړ",
+            tppf: "khoR",
+            ec: "eat,eats,eating,ate,eaten",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "imperfectivePast",
+        perfectTense: "presentPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "perfect",
+        transitivity: "transitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: false,
+        canChangeVoice: true,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
+    },
+  },
+  {
+    e: "I will go",
+    vp: {
+      blocks: [
+        {
+          key: 0.18531725731443727,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 0, distance: "far" },
+            },
+          },
+        },
+        {
+          key: 0.9854835460803812,
+          block: { type: "objectSelection", selection: "none" },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527815348,
+            i: 3768,
+            p: "تلل",
+            f: "tlul",
+            g: "tlul",
+            e: "to go",
+            r: 4,
+            c: "v. intrans.",
+            psp: "ځ",
+            psf: "dz",
+            ssp: "لاړ ش",
+            ssf: "láaR sh",
+            prp: "لاړ",
+            prf: "láaR",
+            ec: "go,goes,going,went,gone",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "imperfectiveFuture",
+        perfectTense: "pastPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "basic",
+        transitivity: "intransitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: false,
+        canChangeVoice: false,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
+    },
+  },
+  {
+    e: "He had seen you",
+    vp: {
+      blocks: [
+        {
+          key: 0.11976135392699705,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 4, distance: "far" },
+            },
+          },
+        },
+        {
+          key: 0.391909682531026,
+          block: {
+            type: "objectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 2, distance: "far" },
+            },
+          },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527812275,
+            i: 11967,
+            p: "لیدل",
+            f: "leedul",
+            g: "leedul",
+            e: "to see",
+            r: 4,
+            c: "v. trans./gramm. trans.",
+            psp: "وین",
+            psf: "ween",
+            tppp: "لید",
+            tppf: "leed",
+            ec: "see,sees,seeing,saw,seen",
+          } as T.VerbDictionaryEntry,
+        },
+        verbTense: "imperfectivePast",
+        perfectTense: "pastPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "perfect",
+        transitivity: "transitive",
+        isCompound: false,
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: true,
+        canChangeVoice: true,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
+    },
+  },
+  {
+    e: "I'm learning Pashto",
+    vp: {
+      blocks: [
+        {
+          key: 0.9346471543028234,
+          block: {
+            type: "subjectSelection",
+            selection: {
+              type: "NP",
+              selection: { type: "pronoun", person: 0, distance: "far" },
+            },
+          },
+        },
+        {
+          key: 0.9845575699028086,
+          block: {
+            type: "objectSelection",
+            selection: {
+              type: "NP",
+              selection: {
+                type: "noun",
+                entry: {
+                  ts: 1527816016,
+                  i: 2582,
+                  p: "پښتو",
+                  f: "puxto",
+                  g: "puxto",
+                  e: "Pashto, Pashtunwali",
+                  r: 4,
+                  c: "n. f.",
+                  ec: "Pashto",
+                } as T.NounEntry,
+                possesor: undefined,
+                gender: "fem",
+                genderCanChange: false,
+                number: "singular",
+                numberCanChange: true,
+                adjectives: [],
+              },
+            },
+          },
+        },
+      ],
+      verb: {
+        type: "verb",
+        verb: {
+          entry: {
+            ts: 1527815444,
+            i: 7289,
+            p: "زده کول",
+            f: "zda kawul",
+            g: "zdakawul",
+            e: "to learn, to teach",
+            r: 4,
+            c: "v. stat. comp. trans.",
+            l: 1527818939,
+            ec: "learn",
+          } as T.VerbDictionaryEntry,
+          complement: {
+            ts: 1527818939,
+            i: 7285,
+            p: "زده",
+            f: "zda",
+            g: "zda",
+            e: "learned, mastered, grasped, learned by heart",
+            r: 4,
+            c: "adj.",
+          },
+        },
+        verbTense: "presentVerb",
+        perfectTense: "pastPerfect",
+        imperativeTense: "perfectiveImperative",
+        tenseCategory: "basic",
+        transitivity: "transitive",
+        isCompound: "stative",
+        voice: "active",
+        negative: false,
+        canChangeTransitivity: false,
+        canChangeVoice: true,
+        canChangeStatDyn: false,
+      },
+      externalComplement: undefined,
+      form: { removeKing: false, shrinkServant: false },
+    },
+  },
+];
+
+export const exampleNPs: {
+  e: string;
+  np: T.NPSelection;
+}[] = [
+  {
+    e: "old book",
+    np: {
+      type: "NP",
+      selection: {
+        type: "noun",
+        entry: {
+          ts: 1527812817,
+          i: 9999,
+          p: "کتاب",
+          f: "kitáab",
+          g: "kitaab",
+          e: "book",
+          c: "n. m.",
+        } as T.NounEntry,
+        gender: "masc",
+        genderCanChange: false,
+        number: "singular",
+        numberCanChange: true,
+        adjectives: [
+          {
+            type: "adjective",
+            entry: {
+              ts: 1527815451,
+              i: 7245,
+              p: "زوړ",
+              f: "zoR",
+              g: "zoR",
+              e: "old",
+              c: "adj. irreg.",
+              infap: "زاړه",
+              infaf: "zaaRu",
+              infbp: "زړ",
+              infbf: "zaR",
+            } as T.AdjectiveEntry,
+            sandwich: undefined,
+          },
+        ],
+        possesor: undefined,
+        determiners: undefined,
+      },
+    },
+  },
+  {
+    e: "Your friend's father",
+    np: {
+      type: "NP",
+      selection: {
+        type: "noun",
+        entry: {
+          ts: 1527815177,
+          i: 2612,
+          p: "پلار",
+          f: "plaar",
+          g: "plaar",
+          e: "father",
+          r: 4,
+          c: "n. m. anim.",
+          ppp: "پلرونه",
+          ppf: "plaróona",
+        } as T.NounEntry,
+        gender: "masc",
+        genderCanChange: false,
+        number: "singular",
+        numberCanChange: true,
+        adjectives: [],
+        possesor: {
+          type: "possesor",
+          np: {
+            type: "NP",
+            selection: {
+              type: "noun",
+              entry: {
+                ts: 1527814159,
+                i: 13131,
+                p: "ملګری",
+                f: "malgúray",
+                g: "malguray",
+                e: "friend, companion",
+                r: 4,
+                c: "n. m. anim. unisex",
+              } as T.NounEntry,
+              gender: "masc",
+              genderCanChange: true,
+              number: "singular",
+              numberCanChange: true,
+              adjectives: [],
+              possesor: {
+                type: "possesor",
+                np: {
+                  type: "NP",
+                  selection: {
+                    type: "pronoun",
+                    person: 2,
+                    distance: "far",
+                  },
+                },
+                shrunken: false,
+              },
+            },
+          },
+          shrunken: false,
+        },
+      },
+    },
+  },
+  {
+    e: "the sweet children (f.)",
+    np: {
+      type: "NP",
+      selection: {
+        type: "noun",
+        entry: {
+          ts: 1527812881,
+          i: 12071,
+          p: "ماشوم",
+          f: "maashoom",
+          g: "maashoom",
+          e: "child, kid",
+          r: 4,
+          c: "n. m. anim. unisex",
+          ec: "child",
+          ep: "children",
+        } as T.NounEntry,
+        gender: "fem",
+        possesor: undefined,
+        genderCanChange: true,
+        number: "plural",
+        numberCanChange: true,
+        adjectives: [
+          {
+            type: "adjective",
+            sandwich: undefined,
+            entry: {
+              ts: 1574865652928,
+              i: 5967,
+              p: "خوږ",
+              f: "khoG",
+              g: "khog",
+              e: "sweet, nice",
+              r: 4,
+              c: "adj.",
+              infap: "خواږه",
+              infaf: "khwaaGu",
+              infbp: "خوږ",
+              infbf: "khwaG",
+            } as T.AdjectiveEntry,
+          },
+        ],
+      },
+    },
+  },
+  {
+    e: "the sweet children (m.)",
+    np: {
+      type: "NP",
+      selection: {
+        type: "noun",
+        entry: {
+          ts: 1527812881,
+          i: 12071,
+          p: "ماشوم",
+          f: "maashoom",
+          g: "maashoom",
+          e: "child, kid",
+          r: 4,
+          c: "n. m. anim. unisex",
+          ec: "child",
+          ep: "children",
+        } as T.NounEntry,
+        possesor: undefined,
+        gender: "masc",
+        genderCanChange: true,
+        number: "plural",
+        numberCanChange: true,
+        adjectives: [
+          {
+            type: "adjective",
+            entry: {
+              ts: 1574865652928,
+              i: 5967,
+              p: "خوږ",
+              f: "khoG",
+              g: "khog",
+              e: "sweet, nice",
+              r: 4,
+              c: "adj.",
+              infap: "خواږه",
+              infaf: "khwaaGu",
+              infbp: "خوږ",
+              infbf: "khwaG",
+            } as T.AdjectiveEntry,
+            sandwich: undefined,
+          },
+        ],
+      },
+    },
+  },
+  {
+    e: "the tired man's guests",
+    np: {
+      type: "NP",
+      selection: {
+        type: "noun",
+        entry: {
+          ts: 1527812908,
+          i: 13527,
+          p: "مېلمه",
+          f: "melma",
+          g: "melma",
+          e: "guest",
+          r: 4,
+          c: "n. m.  unisex",
+          infap: "مېلمانه",
+          infaf: "melmaanu",
+          infbp: "مېلمن",
+          infbf: "melman",
+        } as T.NounEntry,
+        gender: "masc",
+        genderCanChange: true,
+        number: "plural",
+        numberCanChange: true,
+        adjectives: [],
+        possesor: {
+          type: "possesor",
+          np: {
+            type: "NP",
+            selection: {
+              type: "noun",
+              entry: {
+                ts: 1527815251,
+                i: 8039,
+                p: "سړی",
+                f: "saRéy",
+                g: "saRey",
+                e: "man",
+                r: 4,
+                c: "n. m.",
+                ec: "man",
+                ep: "men",
+              } as T.NounEntry,
+              gender: "masc",
+              possesor: undefined,
+              genderCanChange: false,
+              number: "singular",
+              numberCanChange: true,
+              adjectives: [
+                {
+                  type: "adjective",
+                  entry: {
+                    ts: 1527815306,
+                    i: 7815,
+                    p: "ستړی",
+                    f: "stúRey",
+                    g: "stuRey",
+                    e: "tired",
+                    r: 4,
+                    c: "adj. / adv.",
+                  } as T.AdjectiveEntry,
+                  sandwich: undefined,
+                },
+              ],
+            },
+          },
+          shrunken: false,
+        },
+      },
+    },
+  },
 ];
