@@ -1,0 +1,12 @@
+{
+  "reject": [
+    "@mdx-js/react",
+    "@types/react",
+    "@types/react-dom",
+    "react",
+    "react-dom",
+    "@fortawesome/fontawesome-free",
+    "bootstrap",
+    "react-bootstrap"
+  ]
+}
